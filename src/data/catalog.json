@@ -618,7 +618,7 @@
         "category": "Alimento Económico",
         "breed": "Perro",
         "price": 834,
-        "image": "/Croquetas/Perro/Purina/Campeón Adulto 25 kg.webp",
+        "image": "/Croquetas/Perro/Purina/campeon_adulto_25_kg.webp",
         "original_product": "Campeón Adulto",
         "weight": "25 kg",
         "popularity": 1
@@ -630,7 +630,7 @@
         "category": "Alimento Económico",
         "breed": "Perro",
         "price": 857,
-        "image": "/Croquetas/Perro/Purina/Campeón Cachorro 20 kg.jpg",
+        "image": "/Croquetas/Perro/Purina/campeon_cachorro_20_kg.jpg",
         "original_product": "Campeón Cachorro",
         "weight": "20 kg",
         "popularity": 1
@@ -654,7 +654,7 @@
         "category": "Alimento Económico",
         "breed": "Perro",
         "price": 1029,
-        "image": "/Croquetas/Perro/Purina/Dog Chow Adulto R G 25 kg.webp",
+        "image": "/Croquetas/Perro/Purina/dog_chow_adulto_r_g_25_kg.webp",
         "original_product": "Dog Chow Adulto R/G",
         "weight": "25 kg",
         "popularity": 1
@@ -666,7 +666,7 @@
         "category": "Alimento Económico",
         "breed": "Perro",
         "price": 1029,
-        "image": "/Croquetas/Perro/Purina/Dog Chow Adulto R P 25 kg.webp",
+        "image": "/Croquetas/Perro/Purina/dog_chow_adulto_r_p_25_kg.webp",
         "original_product": "Dog Chow Adulto R/P",
         "weight": "25 kg",
         "popularity": 1
@@ -678,7 +678,7 @@
         "category": "Alimento Económico",
         "breed": "Perro",
         "price": 1029,
-        "image": "/Croquetas/Perro/Purina/Cachorro 20 kg.webp",
+        "image": "/Croquetas/Perro/Purina/cachorro_20_kg.webp",
         "original_product": "Dog Chow Cachorro",
         "weight": "20 kg",
         "popularity": 1
@@ -1170,7 +1170,7 @@
         "category": "Alimento Premium",
         "breed": "Perro",
         "price": 1447,
-        "image": "/Croquetas/Perro/Nupec/Adulto 15 kg.jpg",
+        "image": "/Croquetas/Perro/Nupec/adulto_15_kg.jpg",
         "original_product": "Adulto",
         "weight": "15 kg",
         "popularity": 1
