@@ -1,3 +1,17 @@
+:root {
+  /* --- TIPOGRAFÍA MAESTRA --- */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* --- PALETA DE COLORES --- */
+  --primary-color: #FF6B6B;       /* Rojo Marca */
+  
+  /* AQUÍ ESTÁ EL CAMBIO: */
+  --text-dark: #654321;           /* Café Chocolate (Títulos y Textos fuertes) */
+  
+  --text-gray: #636E72;           /* Gris (Textos secundarios) */
+  --bg-gradient: linear-gradient(135deg, #f5e6d3 0%, #f9f0e5 50%, #fef8f1 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +19,24 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-main);
+  background: var(--bg-gradient);
+  color: var(--text-dark); /* Aplica el café a todo el texto base */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f5e6d3 0%, #f9f0e5 50%, #fef8f1 100%);
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+button, input, select, textarea {
+  font-family: var(--font-main);
+  color: var(--text-dark); /* Asegura que los inputs también usen el café */
 }
 
 #root {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
 }

@@ -7,71 +7,69 @@ import './Catalog.css';
 
 function Catalog() {
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('Alimento Económico');
+    
+    const [activeTab, setActiveTab] = useState('Todos');
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [sortOrder, setSortOrder] = useState('az');
     const [isLoading, setIsLoading] = useState(true);
 
-    // Tu Cloud Name
     const CLOUD_NAME = "df3mkkfdo";
 
     const categories = [
+        'Todos',
         'Alimento Económico', 
         'Alimento Premium', 
         'Sobres - Pouches Y Premios', 
         'Arena para Gatos'
     ];
 
-    // Simulación de carga (1.5 segundos)
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1500);
+        const timer = setTimeout(() => setIsLoading(false), 1500);
         return () => clearTimeout(timer);
     }, []);
 
-    // --- FUNCIÓN INTELIGENTE DE IMÁGENES ---
+    // --- FUNCIÓN CORREGIDA: RUTA "HOME" (RAÍZ) ---
     const getProductImage = (product) => {
-        // 1. Si ya es un link de internet completo, úsalo.
-        if (product.image && product.image.startsWith('http')) {
-            return product.image;
+        // 1. Si es URL externa, usarla directo
+        if (product.image && product.image.startsWith('http')) return product.image;
+
+        let imageName = product.image || product.name;
+
+        // 2. Limpieza (por seguridad)
+        // Quitamos "productos/" si lo pusiste por error en el JSON
+        if (imageName.startsWith('productos/')) {
+            imageName = imageName.replace('productos/', '');
         }
-
-        // 2. Limpieza de ruta
-        // Toma lo que haya en "image" (ej: "Cagnolino Adulto 25 kg")
-        const rawName = product.image || product.name;
         
-        // Quita rutas de carpetas si las hubiera
-        const fileNameWithExt = rawName.split('/').pop();
+        // Quitamos la extensión si la pusiste
+        imageName = imageName.replace(/\.(jpg|png|webp|jpeg)$/i, '');
 
-        // 3. Quita extensiones duplicadas y espacios extra
-        const cleanName = fileNameWithExt.replace(/\.(jpg|png|webp|jpeg)$/i, '').trim();
+        // Quitamos espacios en blanco al inicio/final
+        imageName = imageName.trim();
 
-        // 4. Codifica para URL (convierte espacios en %20) y agrega .jpg
-        const finalName = encodeURIComponent(cleanName) + '.jpg';
+        // 3. URL FINAL A LA RAÍZ (HOME)
+        // Nota: Ya NO dice "/productos/" después de "v1/"
+        return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/${imageName}.jpg`;
+    };
 
-        // 5. URL Final de Cloudinary
-        return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/productos/${finalName}`;
+    const handleImageError = (e) => {
+        e.target.onerror = null; 
+        e.target.src = "https://placehold.co/400x400/FFF0F0/FF6B6B?text=Sin+Foto";
     };
 
     const groupedData = useMemo(() => {
         if (!catalogData) return {};
         
-        // A. Filtrado
         let filtered = catalogData.filter(item => {
-            const matchesTab = item.category === activeTab;
+            const matchesTab = activeTab === 'Todos' || item.category === activeTab;
             const term = searchTerm.toLowerCase();
-            
             const name = item.name ? item.name.toLowerCase() : '';
             const brand = item.brand ? item.brand.toLowerCase() : '';
-            const breed = item.breed ? item.breed.toLowerCase() : '';
-
-            const matchesSearch = name.includes(term) || brand.includes(term) || breed.includes(term);
+            const matchesSearch = name.includes(term) || brand.includes(term);
             return matchesTab && matchesSearch;
         });
 
-        // B. Ordenamiento
         filtered.sort((a, b) => {
             switch (sortOrder) {
                 case 'price_asc': return a.price - b.price;
@@ -80,7 +78,6 @@ function Catalog() {
             }
         });
 
-        // C. Agrupamiento
         const groups = {};
         filtered.forEach(item => {
             if (!groups[item.brand]) groups[item.brand] = {};
@@ -88,27 +85,21 @@ function Catalog() {
             groups[item.brand][item.breed].push(item);
         });
         return groups;
-        
     }, [activeTab, searchTerm, sortOrder]);
 
     const brands = Object.keys(groupedData);
 
-    // Si está cargando, mostramos la animación
-    if (isLoading) {
-        return <Loader />;
-    }
+    if (isLoading) return <Loader />;
 
     return (
         <div className="catalog-wrapper">
             <div className="catalog-container">
-                
                 <header className="catalog-header">
-                    <button onClick={() => navigate('/')} className="back-button">
-                        <span>⬅</span> Volver al inicio
+                    <button onClick={() => navigate('/')} className="back-button" aria-label="Volver">
+                        <span style={{ fontSize: '1.4rem', fontWeight: 'bold' }}>🡠</span>
                     </button>
+                    <h1 className="catalog-title-main">Catálogo 🐾</h1>
                 </header>
-                
-                <h1 className="catalog-title-main">Nuestros Productos 🐾</h1>
 
                 <div className="tabs-container">
                     {categories.map(cat => (
@@ -126,18 +117,13 @@ function Catalog() {
                     <div className="search-container">
                         <input
                             type="text"
-                            placeholder="🔍 Buscar marca, raza o producto..."
+                            placeholder="🔍 Buscar producto..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="search-input"
                         />
                     </div>
-
-                    <select 
-                        className="sort-select" 
-                        value={sortOrder} 
-                        onChange={(e) => setSortOrder(e.target.value)}
-                    >
+                    <select className="sort-select" value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
                         <option value="az">🔤 Nombre (A-Z)</option>
                         <option value="price_asc">💰 Precio: Menor a Mayor</option>
                         <option value="price_desc">💎 Precio: Mayor a Menor</option>
@@ -171,10 +157,7 @@ function Catalog() {
                                                             alt={product.name} 
                                                             className="card-image"
                                                             loading="lazy"
-                                                            onError={(e) => {
-                                                                e.target.onerror = null; 
-                                                                e.target.src = "https://via.placeholder.com/300x300?text=Sin+Imagen";
-                                                            }}
+                                                            onError={handleImageError}
                                                         />
                                                     </div>
                                                     <div className="card-info">
