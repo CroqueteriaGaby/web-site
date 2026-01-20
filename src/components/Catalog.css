@@ -1,0 +1,267 @@
+/* Contenedor General */
+.catalog-wrapper {
+  background-color: #FDFBF7; /* Fondo Crema */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.catalog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header simple */
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.back-button:hover {
+  background: #fff0f0;
+  color: #FF6B6B;
+  border-color: #FF6B6B;
+}
+
+.catalog-title-main {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Tabs (Categorías) */
+.tabs-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto; /* Scroll horizontal en celular */
+  padding-bottom: 10px;
+  margin-bottom: 2rem;
+  /* Ocultar barra de scroll fea pero permitir scroll */
+  scrollbar-width: none; 
+}
+.tabs-container::-webkit-scrollbar { display: none; }
+
+.tab-button {
+  padding: 12px 24px;
+  border: none;
+  background: white;
+  border-radius: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #666;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+.tab-button.active {
+  background: #FF6B6B;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+/* Buscador */
+.search-container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 16px;
+  border-radius: 15px;
+  border: 2px solid #eee;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #FF6B6B;
+}
+
+/* Títulos de sección */
+.brand-title {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 2rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.breed-title {
+  color: #888;
+  font-size: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- GRID DE PRODUCTOS (Escritorio) --- */
+.products-grid {
+  display: grid;
+  /* En escritorio: Mínimo 220px por tarjeta, tantas como quepan */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Tarjeta */
+.product-card {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Para que todas midan lo mismo */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-image-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.card-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.card-info {
+  margin-top: auto; /* Empuja la info hacia abajo */
+}
+
+.card-title {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
+}
+
+.card-price {
+  color: #FF6B6B;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.buy-button {
+  background: #FFF0F0;
+  color: #FF6B6B;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buy-button:hover {
+  background: #FF6B6B;
+  color: white;
+}
+
+/* --- VISTA MÓVIL (La corrección clave) --- */
+@media (max-width: 768px) {
+  .products-grid {
+    /* MÓVIL: Una sola columna para que se vea grande y claro */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .catalog-title-main {
+      font-size: 1.5rem;
+  }
+}
+
+/* --- VISTA MÓVIL --- */
+@media (max-width: 768px) {
+  .products-grid {
+    /* Fuerza 1 sola columna en celulares */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+  
+  .product-card {
+    /* Aseguramos que la tarjeta sea vertical */
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .catalog-title-main {
+      font-size: 1.5rem;
+  }
+}
+
+/* ... tus estilos anteriores ... */
+
+/* Agrega esto cerca de donde está .search-container */
+.filters-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.sort-select {
+  padding: 16px;
+  border-radius: 15px;
+  border: 2px solid #eee;
+  background-color: white;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  outline: none;
+  min-width: 200px;
+}
+
+.sort-select:focus {
+  border-color: #FF6B6B;
+}
+
+/* Ajuste para que el buscador y el select convivan bien */
+.search-container {
+  margin-bottom: 0; /* Quitamos el margen porque ahora está dentro del row */
+  flex-grow: 1;
+  max-width: 500px;
+}
