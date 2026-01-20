@@ -16,7 +16,6 @@ function Catalog() {
     // Tu Cloud Name
     const CLOUD_NAME = "df3mkkfdo";
 
-    // LISTA DE CATEGORÍAS
     const categories = [
         'Alimento Económico', 
         'Alimento Premium', 
