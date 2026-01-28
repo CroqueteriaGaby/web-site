@@ -1,7 +1,7 @@
-import { Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
-import Catalog from './components/Catalog'
-import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom'; // <--- NOTA: Aquí YA NO importamos BrowserRouter
+import Home from './components/Home';
+import Catalog from './components/Catalog';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/catalogo" element={<Catalog />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
