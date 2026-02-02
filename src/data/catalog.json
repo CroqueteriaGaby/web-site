@@ -174,7 +174,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 489,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769989706/Dartacan_25_kg_voxvoy.webp",
     "original_product": "Dartacan",
     "weight": "25 kg",
     "popularity": 10
@@ -186,7 +186,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 500,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769992247/dartacan_15kg_hqyyl6.webp",
     "original_product": "Dartacan Cachorro",
     "weight": "15 kg",
     "popularity": 10
@@ -198,7 +198,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 495,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769989706/Dartacan_Plus_20_kg_vlypgl.webp",
     "original_product": "Dartacan Plus",
     "weight": "20 kg",
     "popularity": 10
@@ -210,7 +210,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 500,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769992337/dartacan_premiun_15kg_tfcvuq.webp",
     "original_product": "Dartacan Premium",
     "weight": "15 kg",
     "popularity": 10
@@ -222,7 +222,7 @@
     "category": "Alimento Económico",
     "breed": "Gato",
     "price": 454,
-    "image": "https://placehold.co/300x300/fce4ec/ad1457?text=Alimento+Gato",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769992462/datacat_ilbdgq.jpg",
     "original_product": "Dartacat",
     "weight": "10 kg",
     "popularity": 10
@@ -606,7 +606,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 1184,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1768884233/renal_function_bcva9f.webp",
     "original_product": "Vet Diet Canine Renal",
     "weight": "11.33 kg",
     "popularity": 2
@@ -642,7 +642,7 @@
     "category": "Alimento Económico",
     "breed": "Gato",
     "price": 1018,
-    "image": "https://placehold.co/300x300/fce4ec/ad1457?text=Alimento+Gato",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1768878629/Cat-chow-20kg_duwnjd.webp",
     "original_product": "Cat Chow",
     "weight": "20 kg",
     "popularity": 1
@@ -690,7 +690,7 @@
     "category": "Alimento Económico",
     "breed": "Gato",
     "price": 569,
-    "image": "https://placehold.co/300x300/fce4ec/ad1457?text=Alimento+Gato",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769992532/gatina15kg_hufmn8.jpg",
     "original_product": "Gatina",
     "weight": "15 kg",
     "popularity": 1
@@ -1134,7 +1134,7 @@
     "category": "Alimento Premium",
     "breed": "Perro",
     "price": 243,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769989706/Nupec_2kg_ycepfz.jpg",
     "original_product": "Adulto",
     "weight": "2 kg",
     "popularity": 1
@@ -1146,7 +1146,7 @@
     "category": "Alimento Premium",
     "breed": "Perro",
     "price": 567,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769989955/Nupec_5kg_zos8c0.jpg",
     "original_product": "Adulto",
     "weight": "5 kg",
     "popularity": 1
@@ -1158,7 +1158,7 @@
     "category": "Alimento Premium",
     "breed": "Perro",
     "price": 869,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769991984/Adulto_8_kg_i7xmev.jpg",
     "original_product": "Adulto",
     "weight": "8 kg",
     "popularity": 1
@@ -1170,7 +1170,7 @@
     "category": "Alimento Premium",
     "breed": "Perro",
     "price": 1447,
-    "image": "/Croquetas/Perro/Nupec/adulto_15_kg.jpg",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769989706/Nupec_15kg_nwlhlm.jpg",
     "original_product": "Adulto",
     "weight": "15 kg",
     "popularity": 1
@@ -1182,7 +1182,7 @@
     "category": "Alimento Premium",
     "breed": "Perro",
     "price": 1836,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/df3mkkfdo/image/upload/v1769989868/nupec20kg_uycoi5.jpg",
     "original_product": "Adulto",
     "weight": "20 kg",
     "popularity": 1
