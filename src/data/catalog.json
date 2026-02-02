@@ -1990,5 +1990,255 @@
     "original_product": "Maintenance Cat",
     "weight": "2.72 kg",
     "popularity": 10
+  },
+  {
+    "name": "Proplan Cachorro Raza Pequeña 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 537,
+    "original_product": "Cachorro Raza Pequeña",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Cachorro Raza Pequeña 7.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 1008,
+    "original_product": "Cachorro Raza Pequeña",
+    "weight": "7.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Cachorro 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 502,
+    "original_product": "Cachorro",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Cachorro 7.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 862,
+    "original_product": "Cachorro",
+    "weight": "7.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Cachorro 13 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 1496,
+    "original_product": "Cachorro",
+    "weight": "13 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Adulto Raza Pequeña 3.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 451,
+    "original_product": "Adulto Raza Pequeña",
+    "weight": "3.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Adulto Raza Pequeña 7.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 1125,
+    "original_product": "Adulto Raza Pequeña",
+    "weight": "7.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Adulto Raza Mediana 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 813,
+    "original_product": "Adulto Raza Mediana",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Adulto Raza Mediana 7.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 897,
+    "original_product": "Adulto Raza Mediana",
+    "weight": "7.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Adulto Raza Mediana 13 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 1107,
+    "original_product": "Adulto Raza Mediana",
+    "weight": "13 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Adulto Raza Grande 10 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 1496,
+    "original_product": "Adulto Raza Grande",
+    "weight": "10 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Cachorro Piel Sensible 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 500,
+    "original_product": "Cachorro Piel Sensible",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Cachorro Piel Sensible 13 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 1717,
+    "original_product": "Cachorro Piel Sensible",
+    "weight": "13 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Senior Active Mind Raza Pequeña 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 860,
+    "original_product": "Senior Active Mind Raza Pequeña",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Skin & Stomach Adulto 3.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 605,
+    "original_product": "Skin & Stomach Adulto",
+    "weight": "3.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Kitten 1.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Gato",
+    "price": 561,
+    "original_product": "Kitten",
+    "weight": "1.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Kitten 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Gato",
+    "price": 805,
+    "original_product": "Kitten",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Gato Adulto 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Gato",
+    "price": 423,
+    "original_product": "Gato Adulto",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Gato Esterilizado 7.5 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Gato",
+    "price": 1712,
+    "original_product": "Gato Esterilizado",
+    "weight": "7.5 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Proplan Gato Urinary 3 kg",
+    "brand": "Proplan",
+    "category": "Alimento Premium",
+    "breed": "Gato",
+    "price": 545,
+    "original_product": "Gato Urinary",
+    "weight": "3 kg",
+    "popularity": 2
+  },
+  {
+    "name": "Arena para gatos Kirkland 19 kg",
+    "brand": "Kirkland",
+    "category": "Arena para Gatos",
+    "breed": "Gato",
+    "price": 450,
+    "original_product": "Arena para gatos Kirkland",
+    "weight": "19 kg",
+    "popularity": 10
+  },
+  {
+    "name": "KS Nature Salmon 15.8 kg (Kirkland)",
+    "brand": "Kirkland",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 950.94,
+    "original_product": "KS Nature Salmon",
+    "weight": "15.8 kg",
+    "popularity": 10
+  },
+  {
+    "name": "KS Nature Pavo 15 kg (Kirkland)",
+    "brand": "Kirkland",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 930.08,
+    "original_product": "KS Nature Pavo",
+    "weight": "15 kg",
+    "popularity": 10
+  },
+  {
+    "name": "KS Comida para Gato 11.3 kg (Kirkland)",
+    "brand": "Kirkland",
+    "category": "Alimento Premium",
+    "breed": "Gato",
+    "price": 620,
+    "original_product": "KS Comida para Gato",
+    "weight": "11.3 kg",
+    "popularity": 10
+  },
+  {
+    "name": "KS Perro Maduro 18 kg (Kirkland)",
+    "brand": "Kirkland",
+    "category": "Alimento Premium",
+    "breed": "Perro",
+    "price": 900,
+    "original_product": "KS Perro Maduro",
+    "weight": "18 kg",
+    "popularity": 10
   }
 ]
