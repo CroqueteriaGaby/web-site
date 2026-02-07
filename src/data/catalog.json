@@ -6,7 +6,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 460,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770329635/kan_kan_25kg_rxuxdm.webp",
     "original_product": "Kan Kan",
     "weight": "25 kg",
     "popularity": 10
@@ -18,7 +18,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 345,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770329639/mi_boob_20kg_ryamj0.webp",
     "original_product": "Mi Boob",
     "weight": "20 kg",
     "popularity": 10
@@ -42,7 +42,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 495,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770329643/Silver_Kan_25kg_joi1mg.webp",
     "original_product": "Silver Kan",
     "weight": "25 kg",
     "popularity": 10
@@ -54,7 +54,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 529,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770329647/Silver_Kan_Puppy_20kg_gyoxqm.webp",
     "original_product": "Silver Kan Puppy",
     "weight": "20 kg",
     "popularity": 10
@@ -66,7 +66,7 @@
     "category": "Alimento Económico",
     "breed": "Gato",
     "price": 529,
-    "image": "https://placehold.co/300x300/fce4ec/ad1457?text=Alimento+Gato",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770329652/Silverkat_15kg_detgor.jpg",
     "original_product": "Silverkat",
     "weight": "15 kg",
     "popularity": 10
@@ -78,7 +78,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 713,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770330084/Hi_Dog_Adulto_25_kg_ginamu.webp",
     "original_product": "Hi Dog Adulto",
     "weight": "25 kg",
     "popularity": 10
@@ -90,7 +90,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 713,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770330148/Hi_Dog_Cachorro_20kg_o7vy7p.webp",
     "original_product": "Hi Dog Cachorro",
     "weight": "20 kg",
     "popularity": 10
@@ -138,7 +138,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 426,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770330306/Cagnolino_Adulto_25kg_heiyfp.webp",
     "original_product": "Cagnolino Adulto",
     "weight": "25 kg",
     "popularity": 10
@@ -150,7 +150,7 @@
     "category": "Alimento Económico",
     "breed": "Perro",
     "price": 472,
-    "image": "https://placehold.co/300x300/e3f2fd/1565c0?text=Alimento+Perro",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770330322/Cagnolino_Cachorro_20kg_xjaaeb.webp",
     "original_product": "Cagnolino Cachorro",
     "weight": "20 kg",
     "popularity": 10
@@ -162,7 +162,7 @@
     "category": "Alimento Económico",
     "breed": "Gato",
     "price": 518,
-    "image": "https://placehold.co/300x300/fce4ec/ad1457?text=Alimento+Gato",
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770330330/Gatissimo_15kg_fjpws5.webp",
     "original_product": "Gatissimo",
     "weight": "15 kg",
     "popularity": 10
