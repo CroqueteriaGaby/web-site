@@ -79,13 +79,17 @@ function Home() {
                             <span className="icon">📞</span>
                             <span className="text">55 1234 5678</span>
                         </a>
-                        <a href="mailto:info@croqueteriagaby.com" className="contact-item">
+                        <a href="mailto:croqueteriagaby@gmail.com" className="contact-item">
                             <span className="icon">✉️</span>
-                            <span className="text">info@croqueteriagaby.com</span>
+                            <span className="text">croqueteriagaby@gmail.com</span>
                         </a>
                         <a href="https://www.facebook.com/croqueteriagaby" target="_blank" rel="noopener noreferrer" className="contact-item">
                             <span className="icon">📱</span>
                             <span className="text">@croqueteriagaby</span>
+                        </a>
+                        <a href="https://www.mercadolibre.com.mx/pagina/baebfdchg45361#from=share_eshop" target="_blank" rel="noopener noreferrer" className="contact-item">
+                            <span className="icon">🛒</span>
+                            <span className="text">Tienda Mercado Libre</span>
                         </a>
                     </div>
                 </div>
