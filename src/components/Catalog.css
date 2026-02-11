@@ -62,8 +62,8 @@
   font-weight: 800;
   letter-spacing: -1px;
   margin: 0;
-  /* Compensación visual para que el título se vea centrado aunque esté el botón */
-  padding-right: 50px; 
+  /* El título se centra naturalmente entre el botón de volver y el botón de PDF */
+  padding-right: 0;
 }
 
 /* --- TABS & FILTROS (Scroll Horizontal) --- */
@@ -300,7 +300,7 @@
   .catalog-title-main {
     font-size: 1.8rem;
     padding-right: 0; /* Quitamos compensación en móvil */
-    text-align: right; /* Título alineado a la derecha del botón */
+    text-align: center;
   }
   
   .back-button {
