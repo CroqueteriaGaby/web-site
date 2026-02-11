@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import catalogData from '../data/catalog.json';
 import ProductModal from './ProductModal';
 import Loader from './Loader';
+import DownloadPDFButton from './DownloadPDFButton';
 import './Catalog.css';
 
 function Catalog() {
@@ -99,6 +100,7 @@ function Catalog() {
                         <span style={{ fontSize: '1.4rem', fontWeight: 'bold' }}>🡠</span>
                     </button>
                     <h1 className="catalog-title-main">Catálogo 🐾</h1>
+                    <DownloadPDFButton />
                 </header>
 
                 <div className="tabs-container">
