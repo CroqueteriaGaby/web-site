@@ -13,7 +13,7 @@ function TableOfContents({ categoriesData }) {
                     <Link src={`#cat-${toSlug(category)}`}>
                         <View style={styles.tocRow}>
                             <Text style={styles.tocCategoryName}>
-                                🐾  {category}
+                                {category}
                             </Text>
                         </View>
                     </Link>
@@ -24,7 +24,7 @@ function TableOfContents({ categoriesData }) {
                             src={`#brand-${toSlug(category)}-${toSlug(brand)}`}
                         >
                             <View style={styles.tocBrandRow}>
-                                <Text style={styles.tocBrandName}>• {brand}</Text>
+                                <Text style={styles.tocBrandName}>{brand}</Text>
                             </View>
                         </Link>
                     ))}

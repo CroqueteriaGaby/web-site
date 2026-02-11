@@ -18,7 +18,6 @@ function CoverPage({ logoBase64 }) {
             <Text style={styles.coverSubtitle}>Croqueteria Gaby</Text>
             <View style={styles.coverDecorativeLine} />
             <Text style={styles.coverTitle}>Catalogo de Productos</Text>
-            <Text style={styles.coverPaws}>🐾  🐾  🐾</Text>
             <Text style={styles.coverDate}>{dateStr}</Text>
         </Page>
     );

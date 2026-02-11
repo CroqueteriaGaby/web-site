@@ -1,4 +1,21 @@
+import { getProductKey } from './productKey';
+
 const CLOUD_NAME = 'df3mkkfdo';
+
+/** Scroll step in px when triggering lazy load. */
+const LAZY_SCROLL_STEP_PX = 400;
+/** Delay in ms between scroll steps. */
+const LAZY_SCROLL_STEP_MS = 250;
+/** Time in ms to wait at bottom for images to load. */
+const LAZY_WAIT_AT_BOTTOM_MS = 2500;
+/** Max total time for the whole scroll+wait so we never hang. */
+const LAZY_MAX_TOTAL_MS = 15000;
+
+/** Max width used when drawing images to canvas for PDF (matches ProductCard display size). */
+const PDF_IMAGE_MAX_WIDTH = 150;
+
+/** JPEG quality for PDF product images. */
+const PDF_IMAGE_JPEG_QUALITY = 0.7;
 
 function getImageUrl(product) {
     if (product.image && product.image.startsWith('http')) return product.image;
@@ -11,6 +28,99 @@ function getImageUrl(product) {
     imageName = imageName.trim();
 
     return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/${imageName}.jpg`;
+}
+
+/**
+ * Scrolls the page to the bottom in steps so lazy-loaded images enter the viewport
+ * and start loading, then waits for them. Call this before captureImagesFromDom to
+ * maximize how many images we capture from the DOM (fewer URL fallbacks, fewer
+ * wrong-image risks). Resolves after a fixed wait at bottom or when max time is reached.
+ *
+ * @returns {Promise<void>}
+ */
+export function waitForLazyImages() {
+    const el = document.scrollingElement || document.documentElement;
+    const start = Date.now();
+
+    return new Promise((resolve) => {
+        function step() {
+            if (Date.now() - start >= LAZY_MAX_TOTAL_MS) {
+                scrollToTop();
+                resolve();
+                return;
+            }
+            const { scrollTop, scrollHeight, clientHeight } = el;
+            const atBottom = scrollTop + clientHeight >= scrollHeight - 10;
+            if (atBottom) {
+                setTimeout(() => {
+                    scrollToTop();
+                    resolve();
+                }, LAZY_WAIT_AT_BOTTOM_MS);
+                return;
+            }
+            el.scrollBy(0, LAZY_SCROLL_STEP_PX);
+            setTimeout(step, LAZY_SCROLL_STEP_MS);
+        }
+        function scrollToTop() {
+            el.scrollTop = 0;
+        }
+        step();
+    });
+}
+
+/**
+ * Captures product images from the current page DOM. Use when the catalog is visible
+ * so we get exactly the pixels the user sees (avoids CORS and wrong URLs).
+ * Uses getProductKey(product) so products without or with duplicate ids still get
+ * the correct image (no cache collapse).
+ *
+ * @param {Array<object>} products - Full catalog product list.
+ * @returns {Record<string, string>} Map of product key -> data URL (only for captured products).
+ */
+export function captureImagesFromDom(products) {
+    const cache = {};
+    for (const product of products) {
+        const key = getProductKey(product);
+        const img = document.querySelector(
+            `img.card-image[data-product-id="${CSS.escape(key)}"]`
+        );
+        if (!img || !img.complete || img.naturalWidth === 0) continue;
+
+        try {
+            const canvas = document.createElement('canvas');
+            const scale = Math.min(1, PDF_IMAGE_MAX_WIDTH / img.naturalWidth);
+            canvas.width = img.naturalWidth * scale;
+            canvas.height = img.naturalHeight * scale;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            cache[key] = canvas.toDataURL('image/jpeg', PDF_IMAGE_JPEG_QUALITY);
+        } catch {
+            // Skip; buildImageCacheFromDom will use placeholder for this product.
+        }
+    }
+    return cache;
+}
+
+/**
+ * Builds the full image cache for the PDF using only DOM-captured images.
+ * Any product not captured (not in DOM or img not loaded) gets the "Sin Foto"
+ * placeholder. We never fetch by URL here, so the PDF never shows a wrong
+ * image from the catalog (e.g. same URL for different products).
+ *
+ * @param {Array<object>} products - Full catalog product list.
+ * @param {Record<string, string>} domCache - Result of captureImagesFromDom(products).
+ * @returns {Record<string, string>} Complete product key -> data URL map.
+ */
+export function buildImageCacheFromDom(products, domCache) {
+    const PLACEHOLDER = generatePlaceholderDataUrl();
+    const cache = { ...domCache };
+    for (const product of products) {
+        const key = getProductKey(product);
+        if (cache[key] == null) {
+            cache[key] = PLACEHOLDER;
+        }
+    }
+    return cache;
 }
 
 function generatePlaceholderDataUrl() {
@@ -47,13 +157,12 @@ function loadSingleImage(product) {
             clearTimeout(timeout);
             try {
                 const canvas = document.createElement('canvas');
-                const maxWidth = 150;
-                const scale = Math.min(1, maxWidth / img.naturalWidth);
+                const scale = Math.min(1, PDF_IMAGE_MAX_WIDTH / img.naturalWidth);
                 canvas.width = img.naturalWidth * scale;
                 canvas.height = img.naturalHeight * scale;
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                resolve(canvas.toDataURL('image/jpeg', 0.7));
+                resolve(canvas.toDataURL('image/jpeg', PDF_IMAGE_JPEG_QUALITY));
             } catch (e) {
                 reject(e);
             }
@@ -68,26 +177,59 @@ function loadSingleImage(product) {
     });
 }
 
+/**
+ * Preloads images by URL. Cache is keyed by getProductKey(product) so it merges
+ * correctly with DOM capture. Reuses the same data URL for products that share
+ * the same image URL.
+ */
 export async function preloadImages(products, onProgress) {
     const cache = {};
+    const urlToDataUrl = {};
     const PLACEHOLDER = generatePlaceholderDataUrl();
     const CONCURRENCY = 6;
 
     for (let i = 0; i < products.length; i += CONCURRENCY) {
         const batch = products.slice(i, i + CONCURRENCY);
         const results = await Promise.allSettled(
-            batch.map((product) => loadSingleImage(product))
+            batch.map((product) => {
+                const url = getImageUrl(product);
+                if (urlToDataUrl[url] !== undefined) {
+                    return Promise.resolve(urlToDataUrl[url]);
+                }
+                return loadSingleImage(product).then((dataUrl) => {
+                    urlToDataUrl[url] = dataUrl;
+                    return dataUrl;
+                });
+            })
         );
 
         results.forEach((result, idx) => {
             const product = batch[idx];
-            cache[product.id] = result.status === 'fulfilled' ? result.value : PLACEHOLDER;
+            const key = getProductKey(product);
+            cache[key] = result.status === 'fulfilled' ? result.value : PLACEHOLDER;
         });
 
         onProgress(Math.min(i + CONCURRENCY, products.length), products.length);
     }
 
     return cache;
+}
+
+/**
+ * Loads images only for products missing from existingCache (e.g. after DOM capture).
+ * Uses getProductKey for keys so merge matches DOM cache. Returns merged cache.
+ */
+export async function preloadMissingImages(products, existingCache, onProgress) {
+    const missing = products.filter((p) => !existingCache[getProductKey(p)]);
+    if (missing.length === 0) {
+        onProgress(products.length, products.length);
+        return { ...existingCache };
+    }
+
+    const loaded = await preloadImages(missing, (loaded, total) => {
+        onProgress(Object.keys(existingCache).length + loaded, products.length);
+    });
+    return { ...existingCache, ...loaded };
 }
 
 export async function loadLogoAsBase64(logoUrl) {

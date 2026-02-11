@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import catalogData from '../data/catalog.json';
-import { preloadImages, loadLogoAsBase64 } from '../utils/pdfImageLoader';
+import {
+    waitForLazyImages,
+    captureImagesFromDom,
+    preloadMissingImages,
+    loadLogoAsBase64,
+} from '../utils/pdfImageLoader';
 import './DownloadPDFButton.css';
 
 function DownloadPDFButton() {
@@ -13,15 +18,23 @@ function DownloadPDFButton() {
         try {
             setStatus('loading_images');
 
-            const [{ pdf }, { default: CatalogPDF }, imageCache, logoBase64] =
+            const [{ pdf }, { default: CatalogPDF }, logoBase64] =
                 await Promise.all([
                     import('@react-pdf/renderer'),
                     import('./pdf/CatalogPDF'),
-                    preloadImages(catalogData, (loaded, total) =>
-                        setProgress({ loaded, total })
-                    ),
                     loadLogoAsBase64('/logo.png'),
                 ]);
+
+            setStatus('preparing');
+            await waitForLazyImages();
+
+            setStatus('loading_images');
+            const domCache = captureImagesFromDom(catalogData);
+            const imageCache = await preloadMissingImages(
+                catalogData,
+                domCache,
+                (loaded, total) => setProgress({ loaded, total })
+            );
 
             setStatus('building_pdf');
 
@@ -52,6 +65,13 @@ function DownloadPDFButton() {
 
     const renderContent = () => {
         switch (status) {
+            case 'preparing':
+                return (
+                    <>
+                        <span className="btn-icon">⏳</span>
+                        <span className="btn-text">Preparando imágenes…</span>
+                    </>
+                );
             case 'loading_images':
                 return (
                     <>

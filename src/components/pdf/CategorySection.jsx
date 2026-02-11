@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page, View, Text } from '@react-pdf/renderer';
+import { getProductKey } from '../../utils/productKey';
 import ProductCard from './ProductCard';
 import PDFFooter from './PDFFooter';
 import { styles, toSlug } from './PDFStyles';
@@ -14,8 +15,10 @@ function CategorySection({ category, groupedByBrand, imageCache }) {
             </View>
 
             {Object.keys(groupedByBrand).map((brand) => (
-                <View key={brand} id={`brand-${toSlug(category)}-${toSlug(brand)}`}>
-                    <Text style={styles.brandTitle}>{brand}</Text>
+                <View key={brand}>
+                    <View id={`brand-${toSlug(category)}-${toSlug(brand)}`}>
+                        <Text style={styles.brandTitle}>{brand}</Text>
+                    </View>
 
                     {Object.keys(groupedByBrand[brand]).map((breed) => (
                         <View key={breed}>
@@ -23,9 +26,9 @@ function CategorySection({ category, groupedByBrand, imageCache }) {
                             <View style={styles.productsRow}>
                                 {groupedByBrand[brand][breed].map((product) => (
                                     <ProductCard
-                                        key={product.id}
+                                        key={getProductKey(product)}
                                         product={product}
-                                        imageData={imageCache[product.id]}
+                                        imageData={imageCache[getProductKey(product)]}
                                     />
                                 ))}
                             </View>
