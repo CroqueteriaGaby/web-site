@@ -2000,7 +2000,8 @@
     "original_product": "Cachorro Raza Pequeña",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "https://www.petland.com.pe/wp-content/uploads/Web-productos-83-860x860.jpg"
+    "image": "https://www.petland.com.pe/wp-content/uploads/Web-productos-83-860x860.jpg",
+    "id": "premium_proplan_proplan-cachorro-raza-pequena-3-kg_3-kg"
   },
   {
     "name": "Proplan Cachorro Raza Pequeña 7.5 kg",
@@ -2011,7 +2012,8 @@
     "original_product": "Cachorro Raza Pequeña",
     "weight": "7.5 kg",
     "popularity": 2,
-    "image": "https://www.tierragro.com/cdn/shop/files/Foto_productos_39_50ba6dde-e10f-47f9-aece-3ebc781b1c9e.png?v=1745591298"
+    "image": "https://www.tierragro.com/cdn/shop/files/Foto_productos_39_50ba6dde-e10f-47f9-aece-3ebc781b1c9e.png?v=1745591298",
+    "id": "premium_proplan_proplan-cachorro-raza-pequena-7-5-kg_7-5-kg"
   },
   {
     "name": "Proplan Cachorro 3 kg",
@@ -2022,7 +2024,8 @@
     "original_product": "Cachorro",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "https://petstorelima.pe/wp-content/uploads/2022/10/Proplan-cachorro-complete-3-kg.jpg"
+    "image": "https://petstorelima.pe/wp-content/uploads/2022/10/Proplan-cachorro-complete-3-kg.jpg",
+    "id": "premium_proplan_proplan-cachorro-3-kg_3-kg"
   },
   {
     "name": "Proplan Cachorro 7.5 kg",
@@ -2033,7 +2036,8 @@
     "original_product": "Cachorro",
     "weight": "7.5 kg",
     "popularity": 2,
-    "image": "https://petstorelima.pe/wp-content/uploads/2022/10/ProPlan-cachorro-raza-pequena-7.5-kg.png"
+    "image": "https://petstorelima.pe/wp-content/uploads/2022/10/ProPlan-cachorro-raza-pequena-7.5-kg.png",
+    "id": "premium_proplan_proplan-cachorro-7-5-kg_7-5-kg"
   },
   {
     "name": "Proplan Cachorro 13 kg",
@@ -2044,7 +2048,8 @@
     "original_product": "Cachorro",
     "weight": "13 kg",
     "popularity": 2,
-    "image": "https://d2wuoo4cuot0vy.cloudfront.net/0911-4916/0911-4916_1.jpg"
+    "image": "https://d2wuoo4cuot0vy.cloudfront.net/0911-4916/0911-4916_1.jpg",
+    "id": "premium_proplan_proplan-cachorro-13-kg_13-kg"
   },
   {
     "name": "Proplan Adulto Raza Pequeña 3.5 kg",
@@ -2055,7 +2060,8 @@
     "original_product": "Adulto Raza Pequeña",
     "weight": "3.5 kg",
     "popularity": 2,
-    "image": "https://woofhousepty.com/product/proplan-adulto-razas-pequenas/ADULTO_razas_pequenas_front_proplan.png"
+    "image": "https://woofhousepty.com/product/proplan-adulto-razas-pequenas/ADULTO_razas_pequenas_front_proplan.png",
+    "id": "premium_proplan_proplan-adulto-raza-pequena-3-5-kg_3-5-kg"
   },
   {
     "name": "Proplan Adulto Raza Pequeña 7.5 kg",
@@ -2066,7 +2072,8 @@
     "original_product": "Adulto Raza Pequeña",
     "weight": "7.5 kg",
     "popularity": 2,
-    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770765518/proplan_rp_dci3zb.webp"
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770765518/proplan_rp_dci3zb.webp",
+    "id": "premium_proplan_proplan-adulto-raza-pequena-7-5-kg_7-5-kg"
   },
   {
     "name": "Proplan Adulto Raza Mediana 3 kg",
@@ -2077,7 +2084,8 @@
     "original_product": "Adulto Raza Mediana",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "https://petstorelima.pe/wp-content/uploads/2022/10/Proplan-Adulta-Razas-Medianas-3kg-600x600.png"
+    "image": "https://petstorelima.pe/wp-content/uploads/2022/10/Proplan-Adulta-Razas-Medianas-3kg-600x600.png",
+    "id": "premium_proplan_proplan-adulto-raza-mediana-3-kg_3-kg"
   },
   {
     "name": "Proplan Adulto Raza Mediana 7.5 kg",
@@ -2088,7 +2096,8 @@
     "original_product": "Adulto Raza Mediana",
     "weight": "7.5 kg",
     "popularity": 2,
-    "image": "https://m.media-amazon.com/images/I/519DmZF5o0L.jpg"
+    "image": "https://m.media-amazon.com/images/I/519DmZF5o0L.jpg",
+    "id": "premium_proplan_proplan-adulto-raza-mediana-7-5-kg_7-5-kg"
   },
   {
     "name": "Proplan Adulto Raza Mediana 13 kg",
@@ -2099,7 +2108,8 @@
     "original_product": "Adulto Raza Mediana",
     "weight": "13 kg",
     "popularity": 2,
-    "image": "https://cutepets.com.co/wp-content/uploads/2024/02/7501072217844.JPG-1.jpg"
+    "image": "https://cutepets.com.co/wp-content/uploads/2024/02/7501072217844.JPG-1.jpg",
+    "id": "premium_proplan_proplan-adulto-raza-mediana-13-kg_13-kg"
   },
   {
     "name": "Proplan Adulto Raza Grande 10 kg",
@@ -2110,7 +2120,8 @@
     "original_product": "Adulto Raza Grande",
     "weight": "10 kg",
     "popularity": 2,
-    "image": "https://difesa.mx/cdn/shop/products/proplan_adulto_raza_grande_778f3d0d-420b-413d-83a9-6849fbc15aee_575x826.jpg?v=1628300430"
+    "image": "https://difesa.mx/cdn/shop/products/proplan_adulto_raza_grande_778f3d0d-420b-413d-83a9-6849fbc15aee_575x826.jpg?v=1628300430",
+    "id": "premium_proplan_proplan-adulto-raza-grande-10-kg_10-kg"
   },
   {
     "name": "Proplan Cachorro Piel Sensible 3 kg",
@@ -2121,7 +2132,8 @@
     "original_product": "Cachorro Piel Sensible",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "http://premiumpetcaregt.com/wp-content/uploads/2020/11/Pro-Plan-Adulto-Piel-Sensible-Raza-Pequena.jpg"
+    "image": "http://premiumpetcaregt.com/wp-content/uploads/2020/11/Pro-Plan-Adulto-Piel-Sensible-Raza-Pequena.jpg",
+    "id": "premium_proplan_proplan-cachorro-piel-sensible-3-kg_3-kg"
   },
   {
     "name": "Proplan Cachorro Piel Sensible 13 kg",
@@ -2132,7 +2144,8 @@
     "original_product": "Cachorro Piel Sensible",
     "weight": "13 kg",
     "popularity": 2,
-    "image": "https://img.pacifiko.com/PROD/resize/1/1000x1000/YjhkNGQ1Zj_339.png"
+    "image": "https://img.pacifiko.com/PROD/resize/1/1000x1000/YjhkNGQ1Zj_339.png",
+    "id": "premium_proplan_proplan-cachorro-piel-sensible-13-kg_13-kg"
   },
   {
     "name": "Proplan Senior Active Mind Raza Pequeña 3 kg",
@@ -2143,7 +2156,8 @@
     "original_product": "Senior Active Mind Raza Pequeña",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "https://petzone.com.py/v1/wp-content/uploads/2019/04/7613287031945_1-2.png"
+    "image": "https://petzone.com.py/v1/wp-content/uploads/2019/04/7613287031945_1-2.png",
+    "id": "premium_proplan_proplan-senior-active-mind-raza-pequena-3-kg_3-kg"
   },
   {
     "name": "Proplan Skin & Stomach Adulto 3.5 kg",
@@ -2154,7 +2168,8 @@
     "original_product": "Skin & Stomach Adulto",
     "weight": "3.5 kg",
     "popularity": 2,
-    "image": "https://petnation.com.mx/cdn/shop/files/Imagen6_1800x1800_9526dcb8-d009-4486-a149-c94b5a728a44_600x600.webp?v=1719423723"
+    "image": "https://petnation.com.mx/cdn/shop/files/Imagen6_1800x1800_9526dcb8-d009-4486-a149-c94b5a728a44_600x600.webp?v=1719423723",
+    "id": "premium_proplan_proplan-skin-stomach-adulto-3-5-kg_3-5-kg"
   },
   {
     "name": "Proplan Kitten 1.5 kg",
@@ -2165,7 +2180,8 @@
     "original_product": "Kitten",
     "weight": "1.5 kg",
     "popularity": 2,
-    "image": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lvvbfnznb53hbd"
+    "image": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lvvbfnznb53hbd",
+    "id": "premium_proplan_proplan-kitten-1-5-kg_1-5-kg"
   },
   {
     "name": "Proplan Kitten 3 kg",
@@ -2176,7 +2192,8 @@
     "original_product": "Kitten",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "https://petmates.com.ar/wp-content/uploads/2025/03/PRO-PLAN-KITTEN-3KG.jpg"
+    "image": "https://petmates.com.ar/wp-content/uploads/2025/03/PRO-PLAN-KITTEN-3KG.jpg",
+    "id": "premium_proplan_proplan-kitten-3-kg_3-kg"
   },
   {
     "name": "Proplan Gato Adulto 3 kg",
@@ -2187,7 +2204,8 @@
     "original_product": "Gato Adulto",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "https://ahorropuntopet.cl/wp-content/uploads/2021/09/PROPLAN-CAT-ADULT-3KG.jpg"
+    "image": "https://ahorropuntopet.cl/wp-content/uploads/2021/09/PROPLAN-CAT-ADULT-3KG.jpg",
+    "id": "premium_proplan_proplan-gato-adulto-3-kg_3-kg"
   },
   {
     "name": "Proplan Gato Esterilizado 7.5 kg",
@@ -2198,7 +2216,8 @@
     "original_product": "Gato Esterilizado",
     "weight": "7.5 kg",
     "popularity": 2,
-    "image": "https://petsu.com.mx/wp-content/uploads/2023/04/4DDCDF6A-5CE3-452D-9190-A09FAA67B186.jpeg"
+    "image": "https://petsu.com.mx/wp-content/uploads/2023/04/4DDCDF6A-5CE3-452D-9190-A09FAA67B186.jpeg",
+    "id": "premium_proplan_proplan-gato-esterilizado-7-5-kg_7-5-kg"
   },
   {
     "name": "Proplan Gato Urinary 3 kg",
@@ -2209,7 +2228,8 @@
     "original_product": "Gato Urinary",
     "weight": "3 kg",
     "popularity": 2,
-    "image": "https://mediveb.com/tienda/wp-content/uploads/2025/02/Picture90-2.png"
+    "image": "https://mediveb.com/tienda/wp-content/uploads/2025/02/Picture90-2.png",
+    "id": "premium_proplan_proplan-gato-urinary-3-kg_3-kg"
   },
   {
     "name": "Arena para gatos Kirkland 19 kg",
@@ -2220,7 +2240,8 @@
     "original_product": "Arena para gatos Kirkland",
     "weight": "19 kg",
     "popularity": 10,
-    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770765767/scoopAway_e8tl5v.jpg"
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770765767/scoopAway_e8tl5v.jpg",
+    "id": "arena_kirkland_arena-para-gatos-kirkland-19-kg_19-kg"
   },
   {
     "name": "KS Nature Salmon 15.8 kg (Kirkland)",
@@ -2231,7 +2252,8 @@
     "original_product": "KS Nature Salmon",
     "weight": "15.8 kg",
     "popularity": 10,
-    "image": "https://maspet.com.mx/8-large_default/kirkland-signature-nature-s-domain-alimento-para-perro-con-salmon-y-camote-1587kg.jpg"
+    "image": "https://maspet.com.mx/8-large_default/kirkland-signature-nature-s-domain-alimento-para-perro-con-salmon-y-camote-1587kg.jpg",
+    "id": "premium_kirkland_ks-nature-salmon-15-8-kg-kirkland_15-8-kg"
   },
   {
     "name": "KS Nature Pavo 15 kg (Kirkland)",
@@ -2242,7 +2264,8 @@
     "original_product": "KS Nature Pavo",
     "weight": "15 kg",
     "popularity": 10,
-    "image": "https://resources.claroshop.com/medios-plazavip/mkt/6137b170dc729_a2jpg.jpg?scale=500&qlty=75"
+    "image": "https://resources.claroshop.com/medios-plazavip/mkt/6137b170dc729_a2jpg.jpg?scale=500&qlty=75",
+    "id": "premium_kirkland_ks-nature-pavo-15-kg-kirkland_15-kg"
   },
   {
     "name": "KS Comida para Gato 11.3 kg (Kirkland)",
@@ -2253,7 +2276,8 @@
     "original_product": "KS Comida para Gato",
     "weight": "11.3 kg",
     "popularity": 10,
-    "image": "https://elgrancachorro.com/cdn/shop/files/Kirklandgato2.jpg?v=1705178934&width=1946"
+    "image": "https://elgrancachorro.com/cdn/shop/files/Kirklandgato2.jpg?v=1705178934&width=1946",
+    "id": "premium_kirkland_ks-comida-para-gato-11-3-kg-kirkland_11-3-kg"
   },
   {
     "name": "KS Perro Maduro 18 kg (Kirkland)",
@@ -2264,306 +2288,307 @@
     "original_product": "KS Perro Maduro",
     "weight": "18 kg",
     "popularity": 10,
-    "image": "https://http2.mlstatic.com/D_NQ_NP_673252-MLM85417485251_052025-O-kirkland-mature-dog-perro-adulto-18kg-pollorizo.webp"
+    "image": "https://http2.mlstatic.com/D_NQ_NP_673252-MLM85417485251_052025-O-kirkland-mature-dog-perro-adulto-18kg-pollorizo.webp",
+    "id": "premium_kirkland_ks-perro-maduro-18-kg-kirkland_18-kg"
   },
   {
-      "id": "economico_CHAPETES_0",
-      "name": "CHAPETES PREMIUM ADULTO 18 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 495,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768673/Screenshot_2026-02-10_at_6.09.07_p.m._dsqrm0.png",
-      "original_product": "CHAPETES PREMIUM ADULTO",
-      "weight": "18 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_1",
-      "name": "CHAPETES PET ADULTO 4 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 101,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768674/Screenshot_2026-02-10_at_6.09.13_p.m._d7uggx.png",
-      "original_product": "CHAPETES PET ADULTO",
-      "weight": "4 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_2",
-      "name": "CHAPETES PET ADULTO 20 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 360,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768673/Screenshot_2026-02-10_at_6.09.10_p.m._ut22nf.png",
-      "original_product": "CHAPETES PET ADULTO",
-      "weight": "20 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_3",
-      "name": "CHAPETES PET CACHORRO 18 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 595,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768675/Screenshot_2026-02-10_at_6.09.15_p.m._xspm2s.png",
-      "original_product": "CHAPETES PET CACHORRO",
-      "weight": "18 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_4",
-      "name": "CHAPETES PET GATO ADULTO 15 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 505,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768679/Screenshot_2026-02-10_at_6.09.27_p.m._lfu7je.png",
-      "original_product": "CHAPETES PET GATO ADULTO",
-      "weight": "15 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_5",
-      "name": "CHAPETES PET GATO ADULTO 5 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 205,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768680/Screenshot_2026-02-10_at_6.09.29_p.m._vefvdq.png",
-      "original_product": "CHAPETES PET GATO ADULTO",
-      "weight": "5 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_6",
-      "name": "PREMIUM GATO ADULTO 15 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 575,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768676/Screenshot_2026-02-10_at_6.09.19_p.m._wiv6dd.png",
-      "original_product": "PREMIUM GATO ADULTO",
-      "weight": "15 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_7",
-      "name": "PREMIUM GATO ADULTO 5 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 215,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768678/Screenshot_2026-02-10_at_6.09.21_p.m._pcodvs.png",
-      "original_product": "PREMIUM GATO ADULTO",
-      "weight": "5 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_8",
-      "name": "PREMIUM GATO ADULTO 2 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 115,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768678/Screenshot_2026-02-10_at_6.09.24_p.m._kdzdu5.png",
-      "original_product": "PREMIUM GATO ADULTO",
-      "weight": "2 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_9",
-      "name": "ARENA DE GATO PREMIUM DE BENTONITA 5 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 105,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768682/Screenshot_2026-02-10_at_6.09.34_p.m._otst5f.png",
-      "original_product": "ARENA DE GATO PREMIUM DE BENTONITA",
-      "weight": "5 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_10",
-      "name": "ADULTO RAZAS PEQUEÑAS 10 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 360,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768683/Screenshot_2026-02-10_at_6.09.41_p.m._ao9ntt.png",
-      "original_product": "ADULTO RAZAS PEQUEÑAS",
-      "weight": "10 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_11",
-      "name": "ADULTO RAZAS PEQUEÑAS 5 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 205,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768684/Screenshot_2026-02-10_at_6.09.44_p.m._jnucd8.png",
-      "original_product": "ADULTO RAZAS PEQUEÑAS",
-      "weight": "5 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_12",
-      "name": "ARENA DE GATO PREMIUM DE SILICE 3 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 140,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768682/Screenshot_2026-02-10_at_6.09.37_p.m._hx8tu2.png",
-      "original_product": "ARENA DE GATO PREMIUM DE SILICE",
-      "weight": "3 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_13",
-      "name": "KACHETES MANTENIMIENTO 15 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 250,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768688/Screenshot_2026-02-10_at_6.09.55_p.m._sin8qk.png",
-      "original_product": "KACHETES MANTENIMIENTO",
-      "weight": "15 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_14",
-      "name": "CHAPETEADOS ALIMENTO PARA GALLOS 25 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Ave",
-      "price": 295,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768689/Screenshot_2026-02-10_at_6.09.57_p.m._buh6fe.png",
-      "original_product": "CHAPETEADOS ALIMENTO PARA GALLOS",
-      "weight": "25 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_15",
-      "name": "ADULTO RAZAS PEQUEÑAS 2 kg",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 104,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768686/Screenshot_2026-02-10_at_6.09.48_p.m._ytegqx.png",
-      "original_product": "ADULTO RAZAS PEQUEÑAS",
-      "weight": "2 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_CHAPETES_16",
-      "name": "ALIMENTO HUMEDO PARA PERRO ADULTO 100 g",
-      "brand": "CHAPETES",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 13,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768687/Screenshot_2026-02-10_at_6.09.52_p.m._zfi9hl.png",
-      "original_product": "ALIMENTO HUMEDO PARA PERRO ADULTO",
-      "weight": "100 g",
-      "popularity": 10
-    },
-    {
-      "id": "economico_MASKOTTCHEN_17",
-      "name": "MASKOTTCHEN ADULTO PREMIUM 15 kg",
-      "brand": "MASKOTTCHEN",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 720,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768690/Screenshot_2026-02-10_at_6.10.01_p.m._n27tad.png",
-      "original_product": "MASKOTTCHEN ADULTO PREMIUM",
-      "weight": "15 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_MASKOTTCHEN_18",
-      "name": "MASKOTTCHEN CACHORRO 15 kg",
-      "brand": "MASKOTTCHEN",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 910,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768693/Screenshot_2026-02-10_at_6.10.06_p.m._vocmdq.png",
-      "original_product": "MASKOTTCHEN CACHORRO",
-      "weight": "15 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_MASKOTTCHEN_19",
-      "name": "MASKOTTCHEN ADULTO 15 kg",
-      "brand": "MASKOTTCHEN",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 415,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768692/Screenshot_2026-02-10_at_6.10.03_p.m._wvwisz.png",
-      "original_product": "MASKOTTCHEN ADULTO",
-      "weight": "15 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_MASKOTTCHEN_20",
-      "name": "MASKOTTCHEN CACHORRO 5 kg",
-      "brand": "MASKOTTCHEN",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 335,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768693/Screenshot_2026-02-10_at_6.10.09_p.m._mof22n.png",
-      "original_product": "MASKOTTCHEN CACHORRO",
-      "weight": "5 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_DASNER_21",
-      "name": "DASNER PERRO ADULTO 25 kg",
-      "brand": "DASNER",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 450,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768695/Screenshot_2026-02-10_at_6.10.12_p.m._trooib.png",
-      "original_product": "DASNER PERRO ADULTO",
-      "weight": "25 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_DASNER_22",
-      "name": "DASNER GATO 12 kg",
-      "brand": "DASNER",
-      "category": "Alimento Económico",
-      "breed": "Gato",
-      "price": 470,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768697/Screenshot_2026-02-10_at_6.10.16_p.m._idu65j.png",
-      "original_product": "DASNER GATO",
-      "weight": "12 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_DASNER_23",
-      "name": "DASNER PERRO ADULTO 20 kg",
-      "brand": "DASNER",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 340,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768696/Screenshot_2026-02-10_at_6.10.14_p.m._gvx1j2.png",
-      "original_product": "DASNER PERRO ADULTO",
-      "weight": "20 kg",
-      "popularity": 10
-    },
-    {
-      "id": "economico_DASNER_24",
-      "name": "DASNER CACHORRO 15 kg",
-      "brand": "DASNER",
-      "category": "Alimento Económico",
-      "breed": "Perro",
-      "price": 470,
-      "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768699/Screenshot_2026-02-10_at_6.10.21_p.m._sq9qoy.png",
-      "original_product": "DASNER CACHORRO",
-      "weight": "15 kg",
-      "popularity": 10
-    }  
+    "id": "economico_CHAPETES_0",
+    "name": "CHAPETES PREMIUM ADULTO 18 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 495,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768673/Screenshot_2026-02-10_at_6.09.07_p.m._dsqrm0.png",
+    "original_product": "CHAPETES PREMIUM ADULTO",
+    "weight": "18 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_1",
+    "name": "CHAPETES PET ADULTO 4 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 101,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768674/Screenshot_2026-02-10_at_6.09.13_p.m._d7uggx.png",
+    "original_product": "CHAPETES PET ADULTO",
+    "weight": "4 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_2",
+    "name": "CHAPETES PET ADULTO 20 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 360,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768673/Screenshot_2026-02-10_at_6.09.10_p.m._ut22nf.png",
+    "original_product": "CHAPETES PET ADULTO",
+    "weight": "20 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_3",
+    "name": "CHAPETES PET CACHORRO 18 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 595,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768675/Screenshot_2026-02-10_at_6.09.15_p.m._xspm2s.png",
+    "original_product": "CHAPETES PET CACHORRO",
+    "weight": "18 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_4",
+    "name": "CHAPETES PET GATO ADULTO 15 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 505,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768679/Screenshot_2026-02-10_at_6.09.27_p.m._lfu7je.png",
+    "original_product": "CHAPETES PET GATO ADULTO",
+    "weight": "15 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_5",
+    "name": "CHAPETES PET GATO ADULTO 5 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 205,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768680/Screenshot_2026-02-10_at_6.09.29_p.m._vefvdq.png",
+    "original_product": "CHAPETES PET GATO ADULTO",
+    "weight": "5 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_6",
+    "name": "PREMIUM GATO ADULTO 15 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 575,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768676/Screenshot_2026-02-10_at_6.09.19_p.m._wiv6dd.png",
+    "original_product": "PREMIUM GATO ADULTO",
+    "weight": "15 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_7",
+    "name": "PREMIUM GATO ADULTO 5 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 215,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768678/Screenshot_2026-02-10_at_6.09.21_p.m._pcodvs.png",
+    "original_product": "PREMIUM GATO ADULTO",
+    "weight": "5 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_8",
+    "name": "PREMIUM GATO ADULTO 2 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 115,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768678/Screenshot_2026-02-10_at_6.09.24_p.m._kdzdu5.png",
+    "original_product": "PREMIUM GATO ADULTO",
+    "weight": "2 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_9",
+    "name": "ARENA DE GATO PREMIUM DE BENTONITA 5 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 105,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768682/Screenshot_2026-02-10_at_6.09.34_p.m._otst5f.png",
+    "original_product": "ARENA DE GATO PREMIUM DE BENTONITA",
+    "weight": "5 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_10",
+    "name": "ADULTO RAZAS PEQUEÑAS 10 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 360,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768683/Screenshot_2026-02-10_at_6.09.41_p.m._ao9ntt.png",
+    "original_product": "ADULTO RAZAS PEQUEÑAS",
+    "weight": "10 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_11",
+    "name": "ADULTO RAZAS PEQUEÑAS 5 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 205,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768684/Screenshot_2026-02-10_at_6.09.44_p.m._jnucd8.png",
+    "original_product": "ADULTO RAZAS PEQUEÑAS",
+    "weight": "5 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_12",
+    "name": "ARENA DE GATO PREMIUM DE SILICE 3 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 140,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768682/Screenshot_2026-02-10_at_6.09.37_p.m._hx8tu2.png",
+    "original_product": "ARENA DE GATO PREMIUM DE SILICE",
+    "weight": "3 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_13",
+    "name": "KACHETES MANTENIMIENTO 15 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 250,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768688/Screenshot_2026-02-10_at_6.09.55_p.m._sin8qk.png",
+    "original_product": "KACHETES MANTENIMIENTO",
+    "weight": "15 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_14",
+    "name": "CHAPETEADOS ALIMENTO PARA GALLOS 25 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Ave",
+    "price": 295,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768689/Screenshot_2026-02-10_at_6.09.57_p.m._buh6fe.png",
+    "original_product": "CHAPETEADOS ALIMENTO PARA GALLOS",
+    "weight": "25 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_15",
+    "name": "ADULTO RAZAS PEQUEÑAS 2 kg",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 104,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768686/Screenshot_2026-02-10_at_6.09.48_p.m._ytegqx.png",
+    "original_product": "ADULTO RAZAS PEQUEÑAS",
+    "weight": "2 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_CHAPETES_16",
+    "name": "ALIMENTO HUMEDO PARA PERRO ADULTO 100 g",
+    "brand": "CHAPETES",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 13,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768687/Screenshot_2026-02-10_at_6.09.52_p.m._zfi9hl.png",
+    "original_product": "ALIMENTO HUMEDO PARA PERRO ADULTO",
+    "weight": "100 g",
+    "popularity": 10
+  },
+  {
+    "id": "economico_MASKOTTCHEN_17",
+    "name": "MASKOTTCHEN ADULTO PREMIUM 15 kg",
+    "brand": "MASKOTTCHEN",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 720,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768690/Screenshot_2026-02-10_at_6.10.01_p.m._n27tad.png",
+    "original_product": "MASKOTTCHEN ADULTO PREMIUM",
+    "weight": "15 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_MASKOTTCHEN_18",
+    "name": "MASKOTTCHEN CACHORRO 15 kg",
+    "brand": "MASKOTTCHEN",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 910,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768693/Screenshot_2026-02-10_at_6.10.06_p.m._vocmdq.png",
+    "original_product": "MASKOTTCHEN CACHORRO",
+    "weight": "15 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_MASKOTTCHEN_19",
+    "name": "MASKOTTCHEN ADULTO 15 kg",
+    "brand": "MASKOTTCHEN",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 415,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768692/Screenshot_2026-02-10_at_6.10.03_p.m._wvwisz.png",
+    "original_product": "MASKOTTCHEN ADULTO",
+    "weight": "15 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_MASKOTTCHEN_20",
+    "name": "MASKOTTCHEN CACHORRO 5 kg",
+    "brand": "MASKOTTCHEN",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 335,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768693/Screenshot_2026-02-10_at_6.10.09_p.m._mof22n.png",
+    "original_product": "MASKOTTCHEN CACHORRO",
+    "weight": "5 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_DASNER_21",
+    "name": "DASNER PERRO ADULTO 25 kg",
+    "brand": "DASNER",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 450,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768695/Screenshot_2026-02-10_at_6.10.12_p.m._trooib.png",
+    "original_product": "DASNER PERRO ADULTO",
+    "weight": "25 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_DASNER_22",
+    "name": "DASNER GATO 12 kg",
+    "brand": "DASNER",
+    "category": "Alimento Económico",
+    "breed": "Gato",
+    "price": 470,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768697/Screenshot_2026-02-10_at_6.10.16_p.m._idu65j.png",
+    "original_product": "DASNER GATO",
+    "weight": "12 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_DASNER_23",
+    "name": "DASNER PERRO ADULTO 20 kg",
+    "brand": "DASNER",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 340,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768696/Screenshot_2026-02-10_at_6.10.14_p.m._gvx1j2.png",
+    "original_product": "DASNER PERRO ADULTO",
+    "weight": "20 kg",
+    "popularity": 10
+  },
+  {
+    "id": "economico_DASNER_24",
+    "name": "DASNER CACHORRO 15 kg",
+    "brand": "DASNER",
+    "category": "Alimento Económico",
+    "breed": "Perro",
+    "price": 470,
+    "image": "https://res.cloudinary.com/dkaw62wat/image/upload/v1770768699/Screenshot_2026-02-10_at_6.10.21_p.m._sq9qoy.png",
+    "original_product": "DASNER CACHORRO",
+    "weight": "15 kg",
+    "popularity": 10
+  }
 ]

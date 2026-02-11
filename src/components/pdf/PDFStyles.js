@@ -72,13 +72,6 @@ export const styles = StyleSheet.create({
         marginVertical: 20,
         borderRadius: 2,
     },
-    coverPaws: {
-        fontSize: 24,
-        color: colors.primary,
-        marginTop: 15,
-        textAlign: 'center',
-        letterSpacing: 8,
-    },
 
     // Table of Contents
     tocTitle: {

@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import catalogData from '../data/catalog.json';
+import { getProductKey } from '../utils/productKey';
 import ProductModal from './ProductModal';
 import Loader from './Loader';
 import DownloadPDFButton from './DownloadPDFButton';
@@ -147,17 +148,21 @@ function Catalog() {
                                     <div className="products-grid">
                                         {groupedData[brand][breed].map(product => {
                                             const imageUrl = getProductImage(product);
+                                            const productKey = getProductKey(product);
                                             return (
-                                                <div 
-                                                    key={product.id} 
+                                                <div
+                                                    key={productKey}
                                                     className="product-card"
+                                                    data-product-id={productKey}
                                                     onClick={() => setSelectedProduct({...product, image: imageUrl})}
                                                 >
                                                     <div className="card-image-container">
-                                                        <img 
-                                                            src={imageUrl} 
-                                                            alt={product.name} 
+                                                        <img
+                                                            key={productKey}
+                                                            src={imageUrl}
+                                                            alt={product.name}
                                                             className="card-image"
+                                                            data-product-id={productKey}
                                                             loading="lazy"
                                                             onError={handleImageError}
                                                         />
