@@ -43,7 +43,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -98,7 +99,8 @@
 }
 
 @keyframes gentleBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -123,7 +125,7 @@
 
 .subtitle {
   font-size: 1.5rem;
-  color: #8B6F47;
+  color: #8b6f47;
   margin-bottom: 2rem;
   font-weight: 400;
   line-height: 1.6;
@@ -153,7 +155,7 @@
 .dot {
   width: 8px;
   height: 8px;
-  background: #D4A574;
+  background: #d4a574;
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -161,11 +163,12 @@
 .line {
   flex: 1;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #D4A574, transparent);
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.6;
   }
@@ -173,6 +176,32 @@
     transform: scale(1.5);
     opacity: 1;
   }
+}
+
+/* CTA button */
+.catalog-cta {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
 }
 
 /* Contact section */
@@ -236,7 +265,7 @@
 }
 
 .footer p {
-  color: #8B6F47;
+  color: #8b6f47;
   font-size: 0.9rem;
   opacity: 0.8;
 }

@@ -37,7 +37,7 @@
   border-radius: 50%;
   cursor: pointer;
   color: var(--text-gray);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote */
   display: flex;
   align-items: center;
@@ -79,7 +79,9 @@
   scrollbar-width: none;
 }
 
-.tabs-container::-webkit-scrollbar { display: none; }
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
 
 /* En pantallas grandes, centramos las tabs si caben */
 @media (min-width: 1024px) {
@@ -181,7 +183,7 @@
   /* Tarjetas de mínimo 250px. Si hay espacio, caben más. Si no, saltan. */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
-  justify-content: center; 
+  justify-content: center;
 }
 
 /* --- TARJETAS --- */
@@ -189,9 +191,9 @@
   background: white;
   border-radius: 24px;
   padding: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.02);
+  border: 1px solid rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -200,7 +202,7 @@
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   border-color: #ffe0e0;
 }
 
@@ -219,7 +221,7 @@
   max-width: 100%;
   object-fit: contain;
   /* Sombra suave para que la bolsa de comida destaque */
-  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.05));
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.05));
 }
 
 .card-info {
@@ -232,7 +234,7 @@
   margin-bottom: 8px;
   line-height: 1.3;
   font-size: 1.1rem;
-  
+
   /* Cortar texto largo uniformemente */
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -257,7 +259,7 @@
 }
 
 .buy-button {
-  background: #FFF0F0;
+  background: #fff0f0;
   color: var(--primary-color);
   border: none;
   padding: 8px 18px;
@@ -302,7 +304,7 @@
     padding-right: 0; /* Quitamos compensación en móvil */
     text-align: center;
   }
-  
+
   .back-button {
     width: 45px;
     height: 45px;
@@ -316,7 +318,8 @@
     gap: 12px;
   }
 
-  .search-container, .sort-select {
+  .search-container,
+  .sort-select {
     width: 100%;
     min-width: 0;
   }

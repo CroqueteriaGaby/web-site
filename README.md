@@ -1,76 +1,85 @@
-# Croquetería Gaby - Landing Page
+# Croqueteria Gaby
 
-Una hermosa página de "Próximamente" para Croquetería Gaby, con un diseño cálido y juguetón.
+Landing page and product catalog for Croqueteria Gaby, a pet food store based in Mexico.
 
-## Características
+## Prerequisites
 
-- Diseño responsive (móvil, tablet, escritorio)
-- Animaciones suaves y elegantes
-- Colores cálidos que combinan con el logo
-- Sección de contacto con teléfono, email y redes sociales
-- Elementos decorativos temáticos de mascotas
+- Node.js 18+
+- npm 9+
 
-## Instalación
+## Setup
 
-1. Instalar dependencias:
 ```bash
 npm install
+npm run dev        # http://localhost:5173
 ```
 
-2. Ejecutar servidor de desarrollo:
-```bash
-npm run dev
+## Scripts
+
+| Script                 | Description                     |
+| ---------------------- | ------------------------------- |
+| `npm run dev`          | Start Vite dev server           |
+| `npm run build`        | Typecheck + production build    |
+| `npm run preview`      | Preview production build        |
+| `npm run test`         | Run Vitest tests                |
+| `npm run test:watch`   | Run tests in watch mode         |
+| `npm run lint`         | ESLint check                    |
+| `npm run lint:fix`     | ESLint auto-fix                 |
+| `npm run format`       | Prettier format all files       |
+| `npm run format:check` | Prettier check (CI)             |
+| `npm run typecheck`    | TypeScript type check (no emit) |
+
+## Architecture
+
+```
+src/
+  main.tsx                     # App entry point
+  App.tsx                      # Router setup (/, /catalogo)
+  App.css                      # Home page styles
+  index.css                    # Global styles
+  constants.ts                 # Shared constants (cloud name, WhatsApp, categories)
+  types/
+    product.ts                 # Product interface
+  utils/
+    images.ts                  # Image URL builder and error handler
+    productKey.ts              # Stable product key generation
+    pdfImageLoader.ts          # DOM-based image capture for PDF
+  components/
+    Home.tsx                   # Landing page
+    Catalog.tsx                # Product catalog (search, filter, sort)
+    Catalog.css                # Catalog styles
+    Loader.tsx                 # Loading spinner
+    Navbar.tsx                 # Navigation bar
+    ProductModal.tsx           # Product detail modal with WhatsApp buy
+    ProductModal.css           # Modal styles
+    DownloadPDFButton.tsx      # PDF catalog download with progress
+    pdf/
+      CatalogPDF.tsx           # Full PDF document assembly
+      CoverPage.tsx            # PDF cover page
+      TableOfContents.tsx      # PDF table of contents
+      CategorySection.tsx      # PDF category page
+      ProductCard.tsx          # PDF product card
+      PDFFooter.tsx            # PDF footer with page numbers
+      PDFStyles.ts             # PDF stylesheet and slug utility
+  data/
+    catalog.json               # Product catalog data
 ```
 
-3. Abrir en el navegador: `http://localhost:5173`
+### Data flow
 
-## Compilar para producción
+1. `catalog.json` is imported statically as `Product[]`
+2. `Catalog.tsx` filters, sorts, and groups products by brand/breed
+3. `ProductModal.tsx` shows details and generates a WhatsApp order link
+4. `DownloadPDFButton.tsx` captures product images from the DOM, then lazy-loads `@react-pdf/renderer` to build a PDF
 
-```bash
-npm run build
-```
+## Deployment
 
-Los archivos listos para producción estarán en la carpeta `dist/`.
+The app is deployed on Vercel. Push to `main` to trigger a deploy.
 
-## Previsualizar compilación de producción
+## Tech stack
 
-```bash
-npm run preview
-```
-
-## Tecnologías
-
-- React 18
-- Vite 6
-- CSS3 con animaciones personalizadas
-- Diseño responsive con media queries
-
-## Personalización
-
-### Actualizar información de contacto
-
-Edita el archivo `src/App.jsx` y modifica los enlaces en la sección de contacto:
-
-- Teléfono: `tel:+525512345678`
-- Email: `mailto:info@croqueteriagaby.com`
-- Redes sociales: `https://www.facebook.com/croqueteriagaby`
-
-### Cambiar colores
-
-Los colores principales se encuentran en `src/App.css` y `src/index.css`:
-
-- Marrón oscuro: `#654321`
-- Marrón claro: `#8B6F47`
-- Dorado: `#D4A574`
-- Fondo crema: `#f5e6d3`, `#f9f0e5`, `#fef8f1`
-
-## Despliegue
-
-Esta aplicación puede ser desplegada en:
-
-- **Vercel**: `npm install -g vercel && vercel`
-- **Netlify**: Arrastra la carpeta `dist` a Netlify
-- **GitHub Pages**: Configura GitHub Actions o usa `gh-pages`
-- **Cualquier hosting estático**: Sube la carpeta `dist`
-
-¡Disfruta tu hermosa landing page! 🐾
+- React 18, TypeScript (strict), Vite 6
+- React Router DOM 7 (client-side routing)
+- @react-pdf/renderer (client-side PDF generation)
+- Vitest + @testing-library/react (testing)
+- ESLint 9 + Prettier + Husky + lint-staged (code quality)
