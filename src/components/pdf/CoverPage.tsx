@@ -1,8 +1,11 @@
-import React from 'react';
 import { Page, View, Text, Image } from '@react-pdf/renderer';
 import { styles } from './PDFStyles';
 
-function CoverPage({ logoBase64 }) {
+interface CoverPageProps {
+  logoBase64: string | null;
+}
+
+function CoverPage({ logoBase64 }: CoverPageProps) {
   const now = new Date();
   const months = [
     'Enero',

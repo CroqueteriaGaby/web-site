@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import catalogData from '../data/catalog.json';
+import { useState } from 'react';
+import type { Product } from '../types/product';
+import catalogRaw from '../data/catalog.json';
 import {
   captureImagesFromDom,
   preloadMissingImages,
@@ -7,8 +8,12 @@ import {
 } from '../utils/pdfImageLoader';
 import './DownloadPDFButton.css';
 
+const catalogData = catalogRaw as Product[];
+
+type Status = 'idle' | 'loading_images' | 'building_pdf' | 'error';
+
 function DownloadPDFButton() {
-  const [status, setStatus] = useState('idle');
+  const [status, setStatus] = useState<Status>('idle');
   const [progress, setProgress] = useState({ loaded: 0, total: 0 });
 
   const handleDownload = async () => {

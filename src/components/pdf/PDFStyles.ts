@@ -13,7 +13,7 @@ export const colors = {
   borderLight: '#eeeeee',
 };
 
-export const toSlug = (str) =>
+export const toSlug = (str: string): string =>
   str
     .toLowerCase()
     .normalize('NFD')

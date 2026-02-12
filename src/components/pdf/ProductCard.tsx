@@ -1,8 +1,13 @@
-import React from 'react';
 import { View, Text, Image } from '@react-pdf/renderer';
+import type { Product } from '../../types/product';
 import { styles } from './PDFStyles';
 
-function ProductCard({ product, imageData }) {
+interface ProductCardProps {
+  product: Product;
+  imageData?: string;
+}
+
+function ProductCard({ product, imageData }: ProductCardProps) {
   return (
     <View style={styles.productCard} wrap={false}>
       <View style={styles.productImageContainer}>

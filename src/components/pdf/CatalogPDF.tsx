@@ -1,5 +1,5 @@
-import React from 'react';
 import { Document } from '@react-pdf/renderer';
+import type { Product } from '../../types/product';
 import CoverPage from './CoverPage';
 import TableOfContents from './TableOfContents';
 import CategorySection from './CategorySection';
@@ -11,8 +11,15 @@ const CATEGORIES = [
   'Arena para Gatos',
 ];
 
-function organizeByCategory(catalogData) {
-  const result = [];
+interface OrganizedCategory {
+  category: string;
+  brands: string[];
+  groupedByBrand: Record<string, Record<string, Product[]>>;
+  products: Product[];
+}
+
+function organizeByCategory(catalogData: Product[]): OrganizedCategory[] {
+  const result: OrganizedCategory[] = [];
 
   for (const category of CATEGORIES) {
     const products = catalogData.filter((item) => {
@@ -22,11 +29,11 @@ function organizeByCategory(catalogData) {
 
     if (products.length === 0) continue;
 
-    const groupedByBrand = {};
+    const groupedByBrand: Record<string, Record<string, Product[]>> = {};
     products.forEach((item) => {
       if (!groupedByBrand[item.brand]) groupedByBrand[item.brand] = {};
-      if (!groupedByBrand[item.brand][item.breed]) groupedByBrand[item.brand][item.breed] = [];
-      groupedByBrand[item.brand][item.breed].push(item);
+      if (!groupedByBrand[item.brand]![item.breed]) groupedByBrand[item.brand]![item.breed] = [];
+      groupedByBrand[item.brand]![item.breed]!.push(item);
     });
 
     const brands = Object.keys(groupedByBrand);
@@ -42,7 +49,13 @@ function organizeByCategory(catalogData) {
   return result;
 }
 
-function CatalogPDF({ catalogData, imageCache, logoBase64 }) {
+interface CatalogPDFProps {
+  catalogData: Product[];
+  imageCache: Record<string, string>;
+  logoBase64: string | null;
+}
+
+function CatalogPDF({ catalogData, imageCache, logoBase64 }: CatalogPDFProps) {
   const organized = organizeByCategory(catalogData);
 
   const tocData = organized.map(({ category, brands }) => ({

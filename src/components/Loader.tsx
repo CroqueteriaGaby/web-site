@@ -1,7 +1,6 @@
-import React from 'react';
 import './Loader.css';
 
-const Loader = () => {
+function Loader() {
   return (
     <div className="loader-container">
       <div className="paws-container">
@@ -28,6 +27,6 @@ const Loader = () => {
       <p className="loader-text">Olfateando productos...</p>
     </div>
   );
-};
+}
 
 export default Loader;

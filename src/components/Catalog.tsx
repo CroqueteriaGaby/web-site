@@ -1,18 +1,21 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import catalogData from '../data/catalog.json';
+import type { Product } from '../types/product';
+import catalogRaw from '../data/catalog.json';
 import { getProductKey } from '../utils/productKey';
 import ProductModal from './ProductModal';
 import Loader from './Loader';
 import DownloadPDFButton from './DownloadPDFButton';
 import './Catalog.css';
 
+const catalogData = catalogRaw as Product[];
+
 function Catalog() {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState('Todos');
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [sortOrder, setSortOrder] = useState('az');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -31,37 +34,29 @@ function Catalog() {
     return () => clearTimeout(timer);
   }, []);
 
-  // --- FUNCIÓN CORREGIDA: RUTA "HOME" (RAÍZ) ---
-  const getProductImage = (product) => {
-    // 1. Si es URL externa, usarla directo
+  const getProductImage = (product: Product): string => {
     if (product.image && product.image.startsWith('http')) return product.image;
 
     let imageName = product.image || product.name;
 
-    // 2. Limpieza (por seguridad)
-    // Quitamos "productos/" si lo pusiste por error en el JSON
     if (imageName.startsWith('productos/')) {
       imageName = imageName.replace('productos/', '');
     }
 
-    // Quitamos la extensión si la pusiste
     imageName = imageName.replace(/\.(jpg|png|webp|jpeg)$/i, '');
-
-    // Quitamos espacios en blanco al inicio/final
     imageName = imageName.trim();
 
-    // 3. URL FINAL A LA RAÍZ (HOME)
-    // Nota: Ya NO dice "/productos/" después de "v1/"
     return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/${imageName}.jpg`;
   };
 
-  const handleImageError = (e) => {
-    e.target.onerror = null;
-    e.target.src = 'https://placehold.co/400x400/FFF0F0/FF6B6B?text=Sin+Foto';
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    img.onerror = null;
+    img.src = 'https://placehold.co/400x400/FFF0F0/FF6B6B?text=Sin+Foto';
   };
 
   const groupedData = useMemo(() => {
-    if (!catalogData) return {};
+    if (!catalogData) return {} as Record<string, Record<string, Product[]>>;
 
     const filtered = catalogData.filter((item) => {
       const matchesTab = activeTab === 'Todos' || item.category === activeTab;
@@ -84,11 +79,11 @@ function Catalog() {
       }
     });
 
-    const groups = {};
+    const groups: Record<string, Record<string, Product[]>> = {};
     filtered.forEach((item) => {
       if (!groups[item.brand]) groups[item.brand] = {};
-      if (!groups[item.brand][item.breed]) groups[item.brand][item.breed] = [];
-      groups[item.brand][item.breed].push(item);
+      if (!groups[item.brand]![item.breed]) groups[item.brand]![item.breed] = [];
+      groups[item.brand]![item.breed]!.push(item);
     });
     return groups;
   }, [activeTab, searchTerm, sortOrder]);
@@ -150,11 +145,11 @@ function Catalog() {
           brands.map((brand) => (
             <div key={brand} className="brand-section">
               <h2 className="brand-title">{brand}</h2>
-              {Object.keys(groupedData[brand]).map((breed) => (
+              {Object.keys(groupedData[brand]!).map((breed) => (
                 <div key={breed} className="breed-section">
                   <h3 className="breed-title">{breed}</h3>
                   <div className="products-grid">
-                    {groupedData[brand][breed].map((product) => {
+                    {groupedData[brand]![breed]!.map((product) => {
                       const imageUrl = getProductImage(product);
                       const productKey = getProductKey(product);
                       return (

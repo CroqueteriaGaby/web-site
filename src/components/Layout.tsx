@@ -1,9 +1,12 @@
-import React from 'react';
 import { useLocation } from 'react-router-dom';
-import Navbar from './Navbar'; // Al estar en la misma carpeta, se importa así
+import Navbar from './Navbar';
 import './Layout.css';
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
   const location = useLocation();
 
   // Si la ruta es exactamente '/', ocultamos el navbar
@@ -22,6 +25,6 @@ const Layout = ({ children }) => {
       <main className="main-content">{children}</main>
     </div>
   );
-};
+}
 
 export default Layout;

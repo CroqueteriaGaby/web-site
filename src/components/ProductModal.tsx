@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import type { Product } from '../types/product';
 import './ProductModal.css';
 
-function ProductModal({ product, isOpen, onClose }) {
+interface ProductModalProps {
+  product: Product | null;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
   const [quantity, setQuantity] = useState(1);
 
-  // Resetear cantidad al abrir
   useEffect(() => {
     if (isOpen) {
       setQuantity(1);
@@ -19,27 +25,22 @@ function ProductModal({ product, isOpen, onClose }) {
 
   if (!isOpen || !product) return null;
 
-  // Fallback por si acaso el modal recibe un producto sin imagen válida
-  const handleImageError = (e) => {
-    e.target.onerror = null;
-    e.target.src = `https://placehold.co/400x400/FDFBF7/FF6B6B?text=${encodeURIComponent(product.name)}`;
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    img.onerror = null;
+    img.src = `https://placehold.co/400x400/FDFBF7/FF6B6B?text=${encodeURIComponent(product.name)}`;
   };
 
-  const handleQuantity = (op) => {
+  const handleQuantity = (op: 'inc' | 'dec') => {
     if (op === 'dec' && quantity > 1) setQuantity((q) => q - 1);
     if (op === 'inc') setQuantity((q) => q + 1);
   };
 
-  // --- LÓGICA DE COMPRA (CORREGIDA: TRIGGER MANYCHAT) ---
   const handleBuy = () => {
-    // Número con el '1' para que funcione el link internacional
     const phoneNumber = '5213325322715';
 
     const total = product.price * quantity;
 
-    // --- MENSAJE ESTRUCTURADO PARA ACTIVAR MANYCHAT ---
-    // CLAVE: La palabra "*PEDIDO:*" es lo que dispara tu automatización.
-    // No cambies esa palabra o la IA no sabrá que es una venta web.
     const message = `Hola Croquetería Gaby 🐶!
             Quiero finalizar mi compra web:
 
@@ -51,10 +52,8 @@ function ProductModal({ product, isOpen, onClose }) {
 
 ¿Me ayudan a confirmar entrega?`;
 
-    // Codificación segura para URL
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-    // Abrir WhatsApp
     window.open(url, '_blank');
   };
 
@@ -66,7 +65,6 @@ function ProductModal({ product, isOpen, onClose }) {
         </button>
 
         <div className="modal-body">
-          {/* SECCIÓN DE IMAGEN ÚNICA */}
           <div className="gallery-section">
             <img
               src={product.image}
@@ -74,10 +72,8 @@ function ProductModal({ product, isOpen, onClose }) {
               className="main-image"
               onError={handleImageError}
             />
-            {/* Eliminamos la sección de thumbnails aquí */}
           </div>
 
-          {/* Información */}
           <div className="info-section">
             <span className="modal-brand">{product.brand}</span>
             <h2 className="modal-title">{product.name}</h2>
@@ -86,11 +82,10 @@ function ProductModal({ product, isOpen, onClose }) {
             <div className="description-container">
               <h4 className="section-title">Descripción</h4>
               <p className="description-text">
-                {product.description || `Alimento de alta calidad de la marca ${product.brand}.`}
+                {`Alimento de alta calidad de la marca ${product.brand}.`}
               </p>
             </div>
 
-            {/* Cantidad y Precio */}
             <div className="quantity-selector">
               <span className="section-title" style={{ marginBottom: 0 }}>
                 Cantidad:

@@ -1,9 +1,12 @@
-import React from 'react';
 import { Page, View, Text, Link } from '@react-pdf/renderer';
 import PDFFooter from './PDFFooter';
 import { styles, toSlug } from './PDFStyles';
 
-function TableOfContents({ categoriesData }) {
+interface TableOfContentsProps {
+  categoriesData: Array<{ category: string; brands: string[] }>;
+}
+
+function TableOfContents({ categoriesData }: TableOfContentsProps) {
   return (
     <Page size="A4" style={styles.page}>
       <Text style={styles.tocTitle}>Contenido</Text>

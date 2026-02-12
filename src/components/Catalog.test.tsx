@@ -14,7 +14,7 @@ vi.mock('react-router-dom', async () => {
 });
 
 // Wrapper for Router context
-const renderWithRouter = (component) => {
+const renderWithRouter = (component: React.ReactNode) => {
   return render(<BrowserRouter>{component}</BrowserRouter>);
 };
 

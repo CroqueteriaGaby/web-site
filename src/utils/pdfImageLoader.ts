@@ -1,3 +1,4 @@
+import type { Product } from '../types/product';
 import { getProductKey } from './productKey';
 
 const CLOUD_NAME = 'df3mkkfdo';
@@ -8,7 +9,7 @@ const PDF_IMAGE_MAX_WIDTH = 150;
 /** JPEG quality for PDF product images. */
 const PDF_IMAGE_JPEG_QUALITY = 0.7;
 
-function getImageUrl(product) {
+function getImageUrl(product: Product): string {
   if (product.image && product.image.startsWith('http')) return product.image;
 
   let imageName = product.image || product.name;
@@ -21,20 +22,13 @@ function getImageUrl(product) {
   return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/${imageName}.jpg`;
 }
 
-/**
- * Captures product images from the current page DOM. Use when the catalog is visible
- * so we get exactly the pixels the user sees (avoids CORS and wrong URLs).
- * Uses getProductKey(product) so products without or with duplicate ids still get
- * the correct image (no cache collapse).
- *
- * @param {Array<object>} products - Full catalog product list.
- * @returns {Record<string, string>} Map of product key -> data URL (only for captured products).
- */
-export function captureImagesFromDom(products) {
-  const cache = {};
+export function captureImagesFromDom(products: Product[]): Record<string, string> {
+  const cache: Record<string, string> = {};
   for (const product of products) {
     const key = getProductKey(product);
-    const img = document.querySelector(`img.card-image[data-product-id="${CSS.escape(key)}"]`);
+    const img = document.querySelector(
+      `img.card-image[data-product-id="${CSS.escape(key)}"]`,
+    ) as HTMLImageElement | null;
     if (!img || !img.complete || img.naturalWidth === 0) continue;
 
     try {
@@ -42,7 +36,7 @@ export function captureImagesFromDom(products) {
       const scale = Math.min(1, PDF_IMAGE_MAX_WIDTH / img.naturalWidth);
       canvas.width = img.naturalWidth * scale;
       canvas.height = img.naturalHeight * scale;
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d')!;
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       cache[key] = canvas.toDataURL('image/jpeg', PDF_IMAGE_JPEG_QUALITY);
     } catch {
@@ -52,19 +46,12 @@ export function captureImagesFromDom(products) {
   return cache;
 }
 
-/**
- * Builds the full image cache for the PDF using only DOM-captured images.
- * Any product not captured (not in DOM or img not loaded) gets the "Sin Foto"
- * placeholder. We never fetch by URL here, so the PDF never shows a wrong
- * image from the catalog (e.g. same URL for different products).
- *
- * @param {Array<object>} products - Full catalog product list.
- * @param {Record<string, string>} domCache - Result of captureImagesFromDom(products).
- * @returns {Record<string, string>} Complete product key -> data URL map.
- */
-export function buildImageCacheFromDom(products, domCache) {
+export function buildImageCacheFromDom(
+  products: Product[],
+  domCache: Record<string, string>,
+): Record<string, string> {
   const PLACEHOLDER = generatePlaceholderDataUrl();
-  const cache = { ...domCache };
+  const cache: Record<string, string> = { ...domCache };
   for (const product of products) {
     const key = getProductKey(product);
     if (cache[key] == null) {
@@ -74,11 +61,11 @@ export function buildImageCacheFromDom(products, domCache) {
   return cache;
 }
 
-function generatePlaceholderDataUrl() {
+function generatePlaceholderDataUrl(): string {
   const canvas = document.createElement('canvas');
   canvas.width = 150;
   canvas.height = 150;
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d')!;
 
   ctx.fillStyle = '#FFF0F0';
   ctx.fillRect(0, 0, 150, 150);
@@ -92,7 +79,7 @@ function generatePlaceholderDataUrl() {
   return canvas.toDataURL('image/png');
 }
 
-function loadSingleImage(product) {
+function loadSingleImage(product: Product): Promise<string> {
   const url = getImageUrl(product);
 
   return new Promise((resolve, reject) => {
@@ -111,7 +98,7 @@ function loadSingleImage(product) {
         const scale = Math.min(1, PDF_IMAGE_MAX_WIDTH / img.naturalWidth);
         canvas.width = img.naturalWidth * scale;
         canvas.height = img.naturalHeight * scale;
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d')!;
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         resolve(canvas.toDataURL('image/jpeg', PDF_IMAGE_JPEG_QUALITY));
       } catch (e) {
@@ -128,14 +115,12 @@ function loadSingleImage(product) {
   });
 }
 
-/**
- * Preloads images by URL. Cache is keyed by getProductKey(product) so it merges
- * correctly with DOM capture. Reuses the same data URL for products that share
- * the same image URL.
- */
-export async function preloadImages(products, onProgress) {
-  const cache = {};
-  const urlToDataUrl = {};
+export async function preloadImages(
+  products: Product[],
+  onProgress: (loaded: number, total: number) => void,
+): Promise<Record<string, string>> {
+  const cache: Record<string, string> = {};
+  const urlToDataUrl: Record<string, string> = {};
   const PLACEHOLDER = generatePlaceholderDataUrl();
   const CONCURRENCY = 6;
 
@@ -145,7 +130,7 @@ export async function preloadImages(products, onProgress) {
       batch.map((product) => {
         const url = getImageUrl(product);
         if (urlToDataUrl[url] !== undefined) {
-          return Promise.resolve(urlToDataUrl[url]);
+          return Promise.resolve(urlToDataUrl[url]!);
         }
         return loadSingleImage(product).then((dataUrl) => {
           urlToDataUrl[url] = dataUrl;
@@ -155,7 +140,7 @@ export async function preloadImages(products, onProgress) {
     );
 
     results.forEach((result, idx) => {
-      const product = batch[idx];
+      const product = batch[idx]!;
       const key = getProductKey(product);
       cache[key] = result.status === 'fulfilled' ? result.value : PLACEHOLDER;
     });
@@ -166,24 +151,24 @@ export async function preloadImages(products, onProgress) {
   return cache;
 }
 
-/**
- * Loads images only for products missing from existingCache (e.g. after DOM capture).
- * Uses getProductKey for keys so merge matches DOM cache. Returns merged cache.
- */
-export async function preloadMissingImages(products, existingCache, onProgress) {
+export async function preloadMissingImages(
+  products: Product[],
+  existingCache: Record<string, string>,
+  onProgress: (loaded: number, total: number) => void,
+): Promise<Record<string, string>> {
   const missing = products.filter((p) => !existingCache[getProductKey(p)]);
   if (missing.length === 0) {
     onProgress(products.length, products.length);
     return { ...existingCache };
   }
 
-  const loaded = await preloadImages(missing, (loaded, total) => {
-    onProgress(Object.keys(existingCache).length + loaded, products.length);
+  const loaded = await preloadImages(missing, (loadedCount) => {
+    onProgress(Object.keys(existingCache).length + loadedCount, products.length);
   });
   return { ...existingCache, ...loaded };
 }
 
-export async function loadLogoAsBase64(logoUrl) {
+export async function loadLogoAsBase64(logoUrl: string): Promise<string | null> {
   return new Promise((resolve) => {
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -192,7 +177,7 @@ export async function loadLogoAsBase64(logoUrl) {
         const canvas = document.createElement('canvas');
         canvas.width = img.naturalWidth;
         canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d')!;
         ctx.drawImage(img, 0, 0);
         resolve(canvas.toDataURL('image/png'));
       } catch {
