@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Product } from '../types/product';
+import { CATEGORIES } from '../constants';
+import { getProductImageUrl, handleImageError } from '../utils/images';
 import catalogRaw from '../data/catalog.json';
 import { getProductKey } from '../utils/productKey';
 import ProductModal from './ProductModal';
@@ -19,41 +21,10 @@ function Catalog() {
   const [sortOrder, setSortOrder] = useState('az');
   const [isLoading, setIsLoading] = useState(true);
 
-  const CLOUD_NAME = 'df3mkkfdo';
-
-  const categories = [
-    'Todos',
-    'Alimento Económico',
-    'Alimento Premium',
-    'Sobres - Pouches Y Premios',
-    'Arena para Gatos',
-  ];
-
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
-
-  const getProductImage = (product: Product): string => {
-    if (product.image && product.image.startsWith('http')) return product.image;
-
-    let imageName = product.image || product.name;
-
-    if (imageName.startsWith('productos/')) {
-      imageName = imageName.replace('productos/', '');
-    }
-
-    imageName = imageName.replace(/\.(jpg|png|webp|jpeg)$/i, '');
-    imageName = imageName.trim();
-
-    return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/${imageName}.jpg`;
-  };
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const img = e.currentTarget;
-    img.onerror = null;
-    img.src = 'https://placehold.co/400x400/FFF0F0/FF6B6B?text=Sin+Foto';
-  };
 
   const groupedData = useMemo(() => {
     if (!catalogData) return {} as Record<string, Record<string, Product[]>>;
@@ -104,7 +75,7 @@ function Catalog() {
         </header>
 
         <div className="tabs-container">
-          {categories.map((cat) => (
+          {CATEGORIES.map((cat) => (
             <button
               key={cat}
               className={`tab-button ${activeTab === cat ? 'active' : ''}`}
@@ -150,7 +121,7 @@ function Catalog() {
                   <h3 className="breed-title">{breed}</h3>
                   <div className="products-grid">
                     {groupedData[brand]![breed]!.map((product) => {
-                      const imageUrl = getProductImage(product);
+                      const imageUrl = getProductImageUrl(product);
                       const productKey = getProductKey(product);
                       return (
                         <div

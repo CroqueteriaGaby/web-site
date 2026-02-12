@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Product } from '../types/product';
+import { WHATSAPP_NUMBER } from '../constants';
+import { handleImageError } from '../utils/images';
 import './ProductModal.css';
 
 interface ProductModalProps {
@@ -25,20 +27,12 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
 
   if (!isOpen || !product) return null;
 
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const img = e.currentTarget;
-    img.onerror = null;
-    img.src = `https://placehold.co/400x400/FDFBF7/FF6B6B?text=${encodeURIComponent(product.name)}`;
-  };
-
   const handleQuantity = (op: 'inc' | 'dec') => {
     if (op === 'dec' && quantity > 1) setQuantity((q) => q - 1);
     if (op === 'inc') setQuantity((q) => q + 1);
   };
 
   const handleBuy = () => {
-    const phoneNumber = '5213325322715';
-
     const total = product.price * quantity;
 
     const message = `Hola Croquetería Gaby 🐶!
@@ -52,7 +46,7 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
 
 ¿Me ayudan a confirmar entrega?`;
 
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(url, '_blank');
   };

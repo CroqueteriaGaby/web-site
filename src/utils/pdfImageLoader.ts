@@ -1,26 +1,12 @@
 import type { Product } from '../types/product';
+import { getProductImageUrl } from './images';
 import { getProductKey } from './productKey';
-
-const CLOUD_NAME = 'df3mkkfdo';
 
 /** Max width used when drawing images to canvas for PDF (matches ProductCard display size). */
 const PDF_IMAGE_MAX_WIDTH = 150;
 
 /** JPEG quality for PDF product images. */
 const PDF_IMAGE_JPEG_QUALITY = 0.7;
-
-function getImageUrl(product: Product): string {
-  if (product.image && product.image.startsWith('http')) return product.image;
-
-  let imageName = product.image || product.name;
-  if (imageName.startsWith('productos/')) {
-    imageName = imageName.replace('productos/', '');
-  }
-  imageName = imageName.replace(/\.(jpg|png|webp|jpeg)$/i, '');
-  imageName = imageName.trim();
-
-  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/${imageName}.jpg`;
-}
 
 export function captureImagesFromDom(products: Product[]): Record<string, string> {
   const cache: Record<string, string> = {};
@@ -80,7 +66,7 @@ function generatePlaceholderDataUrl(): string {
 }
 
 function loadSingleImage(product: Product): Promise<string> {
-  const url = getImageUrl(product);
+  const url = getProductImageUrl(product);
 
   return new Promise((resolve, reject) => {
     const img = new Image();
@@ -128,7 +114,7 @@ export async function preloadImages(
     const batch = products.slice(i, i + CONCURRENCY);
     const results = await Promise.allSettled(
       batch.map((product) => {
-        const url = getImageUrl(product);
+        const url = getProductImageUrl(product);
         if (urlToDataUrl[url] !== undefined) {
           return Promise.resolve(urlToDataUrl[url]!);
         }
