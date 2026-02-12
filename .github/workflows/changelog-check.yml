@@ -1,0 +1,29 @@
+name: Changelog Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for changelog update
+        run: |
+          BASE=${{ github.event.pull_request.base.sha }}
+          HEAD=${{ github.event.pull_request.head.sha }}
+
+          SRC_CHANGED=$(git diff --name-only "$BASE" "$HEAD" | grep -E '^src/|^package\.json' | head -1 || true)
+          CHANGELOG_CHANGED=$(git diff --name-only "$BASE" "$HEAD" | grep 'CHANGELOG.md' || true)
+
+          if [ -n "$SRC_CHANGED" ] && [ -z "$CHANGELOG_CHANGED" ]; then
+            echo "::error::Source files changed but CHANGELOG.md was not updated."
+            echo "Please add a changelog entry describing your changes."
+            exit 1
+          fi
+
+          echo "Changelog check passed."
