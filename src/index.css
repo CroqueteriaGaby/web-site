@@ -3,12 +3,12 @@
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   /* --- PALETA DE COLORES --- */
-  --primary-color: #FF6B6B;       /* Rojo Marca */
-  
+  --primary-color: #ff6b6b; /* Rojo Marca */
+
   /* AQUÍ ESTÁ EL CAMBIO: */
-  --text-dark: #654321;           /* Café Chocolate (Títulos y Textos fuertes) */
-  
-  --text-gray: #636E72;           /* Gris (Textos secundarios) */
+  --text-dark: #654321; /* Café Chocolate (Títulos y Textos fuertes) */
+
+  --text-gray: #636e72; /* Gris (Textos secundarios) */
   --bg-gradient: linear-gradient(135deg, #f5e6d3 0%, #f9f0e5 50%, #fef8f1 100%);
 }
 
@@ -28,7 +28,10 @@ body {
   overflow-x: hidden;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: var(--font-main);
   color: var(--text-dark); /* Asegura que los inputs también usen el café */
 }

@@ -3,7 +3,7 @@
   display: flex;
   width: 100%;
   min-height: 100vh;
-  background-color: #FDFBF7; /* Tu color crema */
+  background-color: #fdfbf7; /* Tu color crema */
 }
 
 /* Modo Home: Bloque normal, sin flex lateral */
@@ -18,7 +18,7 @@
   height: 100vh;
   position: sticky;
   top: 0;
-  border-right: 1px solid #E5E0D8;
+  border-right: 1px solid #e5e0d8;
   background-color: white; /* O el color de tu navbar */
 }
 
@@ -27,7 +27,7 @@
   flex-grow: 1;
   width: 100%;
   /* Padding opcional para que el contenido no pegue con los bordes */
-  padding: 0; 
+  padding: 0;
 }
 
 /* Si estás en el Home, aseguramos que ocupe todo */

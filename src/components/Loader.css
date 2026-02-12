@@ -1,49 +1,72 @@
 .loader-container {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100vh;
-    background-color: #FDFBF7;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fdfbf7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
 }
 
 .paws-container {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .paw-icon {
-    width: 40px;
-    height: 40px;
-    color: #FF6B6B; /* Tu color de marca */
-    opacity: 0; /* Empiezan invisibles */
-    /* Animación: Aparece y desaparece */
-    animation: walk 1.5s infinite ease-in-out;
+  width: 40px;
+  height: 40px;
+  color: #ff6b6b; /* Tu color de marca */
+  opacity: 0; /* Empiezan invisibles */
+  /* Animación: Aparece y desaparece */
+  animation: walk 1.5s infinite ease-in-out;
 }
 
 /* Retrasos para crear el efecto de "caminar" (una tras otra) */
-.paw-1 { animation-delay: 0s; }
-.paw-2 { animation-delay: 0.2s; }
-.paw-3 { animation-delay: 0.4s; }
+.paw-1 {
+  animation-delay: 0s;
+}
+.paw-2 {
+  animation-delay: 0.2s;
+}
+.paw-3 {
+  animation-delay: 0.4s;
+}
 
 /* Inclinamos un poco las patas para que parezcan pisadas reales */
-.paw-1 { transform: rotate(-10deg); }
-.paw-2 { transform: rotate(10deg) translateY(-10px); } /* Una un poco más arriba */
-.paw-3 { transform: rotate(-5deg); }
+.paw-1 {
+  transform: rotate(-10deg);
+}
+.paw-2 {
+  transform: rotate(10deg) translateY(-10px);
+} /* Una un poco más arriba */
+.paw-3 {
+  transform: rotate(-5deg);
+}
 
 @keyframes walk {
-    0% { opacity: 0; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.1); }
-    100% { opacity: 0; transform: scale(0.8); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
 }
 
 .loader-text {
-    font-family: sans-serif;
-    color: #888;
-    font-weight: 500;
-    letter-spacing: 1px;
+  font-family: sans-serif;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
