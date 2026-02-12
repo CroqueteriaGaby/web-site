@@ -2,15 +2,6 @@ import { getProductKey } from './productKey';
 
 const CLOUD_NAME = 'df3mkkfdo';
 
-/** Scroll step in px when triggering lazy load. */
-const LAZY_SCROLL_STEP_PX = 400;
-/** Delay in ms between scroll steps. */
-const LAZY_SCROLL_STEP_MS = 250;
-/** Time in ms to wait at bottom for images to load. */
-const LAZY_WAIT_AT_BOTTOM_MS = 2500;
-/** Max total time for the whole scroll+wait so we never hang. */
-const LAZY_MAX_TOTAL_MS = 15000;
-
 /** Max width used when drawing images to canvas for PDF (matches ProductCard display size). */
 const PDF_IMAGE_MAX_WIDTH = 150;
 
@@ -28,44 +19,6 @@ function getImageUrl(product) {
     imageName = imageName.trim();
 
     return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_500/v1/${imageName}.jpg`;
-}
-
-/**
- * Scrolls the page to the bottom in steps so lazy-loaded images enter the viewport
- * and start loading, then waits for them. Call this before captureImagesFromDom to
- * maximize how many images we capture from the DOM (fewer URL fallbacks, fewer
- * wrong-image risks). Resolves after a fixed wait at bottom or when max time is reached.
- *
- * @returns {Promise<void>}
- */
-export function waitForLazyImages() {
-    const el = document.scrollingElement || document.documentElement;
-    const start = Date.now();
-
-    return new Promise((resolve) => {
-        function step() {
-            if (Date.now() - start >= LAZY_MAX_TOTAL_MS) {
-                scrollToTop();
-                resolve();
-                return;
-            }
-            const { scrollTop, scrollHeight, clientHeight } = el;
-            const atBottom = scrollTop + clientHeight >= scrollHeight - 10;
-            if (atBottom) {
-                setTimeout(() => {
-                    scrollToTop();
-                    resolve();
-                }, LAZY_WAIT_AT_BOTTOM_MS);
-                return;
-            }
-            el.scrollBy(0, LAZY_SCROLL_STEP_PX);
-            setTimeout(step, LAZY_SCROLL_STEP_MS);
-        }
-        function scrollToTop() {
-            el.scrollTop = 0;
-        }
-        step();
-    });
 }
 
 /**

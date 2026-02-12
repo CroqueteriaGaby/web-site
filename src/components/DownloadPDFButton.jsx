@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import catalogData from '../data/catalog.json';
 import {
-    waitForLazyImages,
     captureImagesFromDom,
     preloadMissingImages,
     loadLogoAsBase64,
@@ -25,10 +24,6 @@ function DownloadPDFButton() {
                     loadLogoAsBase64('/logo.png'),
                 ]);
 
-            setStatus('preparing');
-            await waitForLazyImages();
-
-            setStatus('loading_images');
             const domCache = captureImagesFromDom(catalogData);
             const imageCache = await preloadMissingImages(
                 catalogData,
@@ -65,13 +60,6 @@ function DownloadPDFButton() {
 
     const renderContent = () => {
         switch (status) {
-            case 'preparing':
-                return (
-                    <>
-                        <span className="btn-icon">⏳</span>
-                        <span className="btn-text">Preparando imágenes…</span>
-                    </>
-                );
             case 'loading_images':
                 return (
                     <>
