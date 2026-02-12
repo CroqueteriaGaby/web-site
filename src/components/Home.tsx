@@ -39,31 +39,8 @@ function Home() {
         </div>
 
         {/* Catalog Button */}
-        <div className="catalog-cta" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <button
-            onClick={() => navigate('/catalogo')}
-            className="cta-button"
-            style={{
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
-              backgroundColor: '#ff6b6b',
-              color: 'white',
-              border: 'none',
-              borderRadius: '50px',
-              cursor: 'pointer',
-              boxShadow: '0 4px 15px rgba(255, 107, 107, 0.4)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
-              fontWeight: 'bold',
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 107, 107, 0.6)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 107, 107, 0.4)';
-            }}
-          >
+        <div className="catalog-cta">
+          <button onClick={() => navigate('/catalogo')} className="cta-button">
             Ver Catálogo 🦴
           </button>
         </div>
@@ -103,7 +80,7 @@ function Home() {
 
         {/* Footer */}
         <footer className="footer">
-          <p>© 2024 Croquetería Gaby. Amor y cuidado para tus mascotas.</p>
+          <p>© {new Date().getFullYear()} Croquetería Gaby. Amor y cuidado para tus mascotas.</p>
         </footer>
       </main>
     </div>

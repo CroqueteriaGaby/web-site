@@ -27,11 +27,6 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
 
   if (!isOpen || !product) return null;
 
-  const handleQuantity = (op: 'inc' | 'dec') => {
-    if (op === 'dec' && quantity > 1) setQuantity((q) => q - 1);
-    if (op === 'inc') setQuantity((q) => q + 1);
-  };
-
   const handleBuy = () => {
     const total = product.price * quantity;
 
@@ -84,11 +79,11 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
               <span className="section-title" style={{ marginBottom: 0 }}>
                 Cantidad:
               </span>
-              <button className="qty-btn" onClick={() => handleQuantity('dec')}>
+              <button className="qty-btn" onClick={() => setQuantity((q) => Math.max(1, q - 1))}>
                 -
               </button>
               <span className="qty-number">{quantity}</span>
-              <button className="qty-btn" onClick={() => handleQuantity('inc')}>
+              <button className="qty-btn" onClick={() => setQuantity((q) => q + 1)}>
                 +
               </button>
             </div>
