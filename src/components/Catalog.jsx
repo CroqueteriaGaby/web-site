@@ -63,7 +63,7 @@ function Catalog() {
   const groupedData = useMemo(() => {
     if (!catalogData) return {};
 
-    let filtered = catalogData.filter((item) => {
+    const filtered = catalogData.filter((item) => {
       const matchesTab = activeTab === 'Todos' || item.category === activeTab;
       const term = searchTerm.toLowerCase();
       const name = item.name ? item.name.toLowerCase() : '';

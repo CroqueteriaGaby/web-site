@@ -3,13 +3,14 @@ import globals from 'globals';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import tseslint from 'typescript-eslint';
 import prettierConfig from 'eslint-config-prettier';
 
-export default [
+export default tseslint.config(
   { ignores: ['dist/', 'node_modules/', 'scripts/'] },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
-    ...js.configs.recommended,
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -32,7 +33,7 @@ export default [
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'react/prop-types': 'off',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       'react-hooks/set-state-in-effect': 'warn',
     },
     settings: {
@@ -40,4 +41,4 @@ export default [
     },
   },
   prettierConfig,
-];
+);
