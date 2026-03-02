@@ -19,10 +19,11 @@ const OVERWRITE_EXISTING = false; // if true and above is false, overwrites exis
 
 /**
  * When set, only products matching this predicate are processed.
- * Set to null to process all products.
- * Below: only ProPlan products with empty/placeholder images (the 57 new ones).
+ * Set to null to process all products with empty/placeholder images.
+ * Below: only Royal Canin products with empty/placeholder images.
  */
-const isProPlanWithEmptyImage = (p) => {
+const isRoyalCaninWithEmptyImage = (p) => {
+  const brand = String(p.brand ?? '').toLowerCase();
   const id = String(p.id ?? '').toLowerCase();
   const img = p.image ?? '';
   const empty =
@@ -30,9 +31,9 @@ const isProPlanWithEmptyImage = (p) => {
     typeof img !== 'string' ||
     img.trim() === '' ||
     img.toLowerCase().includes('placehold.co');
-  return id.includes('premium_proplan') && empty;
+  return (brand.includes('royal canin') || id.includes('royalcanin')) && empty;
 };
-const ONLY_PRODUCTS_MATCHING = isProPlanWithEmptyImage;
+const ONLY_PRODUCTS_MATCHING = isRoyalCaninWithEmptyImage;
 
 const HEADERS = {
   'User-Agent':
