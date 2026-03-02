@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- 57 ProPlan products to catalog (premium_proplan brand)
+- ProPlan-only filter to `update-catalog-images.js` script
 - TypeScript strict mode with `noUncheckedIndexedAccess`
 - ESLint 9 flat config with React, React Hooks, and TypeScript rules
 - Prettier formatting with single quotes and trailing commas
