@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Updated prices for products over $200 by adding $30 to each
 - Converted all 20 source files from JavaScript/JSX to TypeScript/TSX
 - Replaced duplicated image URL logic across Catalog, ProductModal, and pdfImageLoader with shared `getProductImageUrl()`
 - Replaced duplicated `handleImageError` across Catalog and ProductModal with shared utility
